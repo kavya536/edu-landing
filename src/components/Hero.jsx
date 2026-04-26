@@ -12,10 +12,10 @@ const Hero = () => (
           Unlock your potential with one-click expert tutor bookings. Professional mentorship tailored for every class, subject, and national competitive exam.
         </p>
         <div className="flex flex-col sm:flex-row gap-6">
-          <a href="http://localhost:3006/?view=login" className="bg-primary text-on-primary px-8 md:px-10 py-4 md:py-5 rounded-md text-base md:text-lg font-medium shadow-xl hover:translate-y-[-4px] transition-all duration-300 flex items-center justify-center group">
+          <a href={`${import.meta.env.VITE_STUDENT_HUB_URL}/?view=login`} className="bg-primary text-on-primary px-8 md:px-10 py-4 md:py-5 rounded-md text-base md:text-lg font-medium shadow-xl hover:translate-y-[-4px] transition-all duration-300 flex items-center justify-center group">
             Book a Tutor
           </a>
-          <a href="http://localhost:3001/?view=login" className="bg-white text-[#808080] px-8 md:px-10 py-4 md:py-5 rounded-none text-base md:text-lg font-medium shadow-[8px_8px_0px_0px_rgba(53,53,53,0.1)] hover:translate-y-[-4px] transition-all duration-300 flex items-center justify-center group border-2 border-primary">
+          <a href={`${import.meta.env.VITE_TUTOR_DASHBOARD_URL}/?view=login`} className="bg-white text-[#808080] px-8 md:px-10 py-4 md:py-5 rounded-none text-base md:text-lg font-medium shadow-[8px_8px_0px_0px_rgba(53,53,53,0.1)] hover:translate-y-[-4px] transition-all duration-300 flex items-center justify-center group border-2 border-primary">
             Join as Tutor
           </a>
         </div>

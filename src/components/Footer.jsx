@@ -38,7 +38,7 @@ const Footer = ({ setView }) => (
             <ul className="space-y-4">
               <li><a className="font-body text-xs tracking-wide text-slate-600 font-semibold hover:text-primary transition-all whitespace-nowrap" href="#">Privacy Policy</a></li>
               <li><a className="font-body text-xs tracking-wide text-slate-600 font-semibold hover:text-primary transition-all whitespace-nowrap" href="#">Terms of Service</a></li>
-              <li><a className="font-body text-xs tracking-wide text-slate-600 font-semibold hover:text-primary transition-all whitespace-nowrap" href="http://localhost:3001/?view=login">Faculty Portal</a></li>
+              <li><a className="font-body text-xs tracking-wide text-slate-600 font-semibold hover:text-primary transition-all whitespace-nowrap" href={`${import.meta.env.VITE_TUTOR_DASHBOARD_URL}/?view=login`}>Faculty Portal</a></li>
               <li><a className="font-body text-xs tracking-wide text-slate-600 font-semibold hover:text-primary transition-all whitespace-nowrap" href="#contact">Contact Us</a></li>
             </ul>
           </div>

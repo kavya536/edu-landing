@@ -15,8 +15,8 @@ const Navbar = ({ setView }) => (
           <button className="font-headline tracking-[-0.02em] font-medium text-[#353535] hover:text-blue-950 transition-colors" onClick={() => setView('pricing')}>Pricing</button>
         </div>
         <div className="flex items-center space-x-3 md:space-x-6">
-          <a href="http://localhost:3001/?view=login" className="hidden sm:inline-flex items-center bg-white text-[#353535] px-5 py-2 md:py-2.5 rounded-none font-medium hover:translate-y-[-2px] transition-all duration-300 scale-95 active:scale-100 text-sm md:text-base border-2 border-primary shadow-[4px_4px_0px_0px_rgba(53,53,53,0.1)]">Join as Tutor</a>
-          <a href="http://localhost:3006/?view=login" className="bg-primary text-on-primary px-4 md:px-6 py-2 md:py-2.5 rounded-md font-medium hover:translate-y-[-2px] transition-transform duration-300 scale-95 active:scale-100 text-sm md:text-base">
+          <a href={`${import.meta.env.VITE_TUTOR_DASHBOARD_URL}/?view=login`} className="hidden sm:inline-flex items-center bg-white text-[#353535] px-5 py-2 md:py-2.5 rounded-none font-medium hover:translate-y-[-2px] transition-all duration-300 scale-95 active:scale-100 text-sm md:text-base border-2 border-primary shadow-[4px_4px_0px_0px_rgba(53,53,53,0.1)]">Join as Tutor</a>
+          <a href={`${import.meta.env.VITE_STUDENT_HUB_URL}/?view=login`} className="bg-primary text-on-primary px-4 md:px-6 py-2 md:py-2.5 rounded-md font-medium hover:translate-y-[-2px] transition-transform duration-300 scale-95 active:scale-100 text-sm md:text-base">
             Book a Tutor
           </a>
           <button className="md:hidden p-2 text-[#808080]">

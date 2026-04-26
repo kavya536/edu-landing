@@ -14,7 +14,7 @@ const Contact = ({ onViewPricing }) => (
             Join an elite circle of scholars and redefine what you thought was possible in your academic pursuit.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-6">
-            <a href="http://localhost:3006/?view=login" className="bg-white text-[#808080] px-12 py-5 rounded-md font-bold text-lg hover:scale-105 transition-transform duration-300 shadow-xl flex items-center justify-center">
+            <a href={`${import.meta.env.VITE_STUDENT_HUB_URL}/?view=login`} className="bg-white text-[#808080] px-12 py-5 rounded-md font-bold text-lg hover:scale-105 transition-transform duration-300 shadow-xl flex items-center justify-center">
               Book a Tutor
             </a>
             <button 
