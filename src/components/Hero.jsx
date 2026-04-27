@@ -1,26 +1,26 @@
 import React from 'react';
 
 const Hero = () => (
-  <section className="relative min-h-screen md:min-h-[700px] flex items-center overflow-hidden px-6 md:px-12 bg-surface py-20 md:py-0">
-    <div className="max-w-screen-2xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
-      <div className="md:col-span-7 z-10 text-center md:text-left">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-[#353535] tracking-tight mb-6">
-          <span className="block">Bridging the Gap</span>
-          <span className="block mt-2 italic font-normal text-[#353535]">Between You & Success</span>
+  <section className="relative min-h-[90vh] md:min-h-[700px] flex items-center overflow-hidden px-6 md:px-12 bg-surface py-20 md:py-32">
+    <div className="max-w-screen-2xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center w-full">
+      <div className="lg:col-span-7 z-10 text-center lg:text-left pt-10 lg:pt-0">
+        <h1 className="text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-serif font-bold text-[#353535] tracking-tight mb-8">
+          <span className="block leading-tight">Bridging the Gap</span>
+          <span className="block mt-2 italic font-normal text-primary">Between You & Success</span>
         </h1>
-        <p className="text-base md:text-xl text-[#808080] max-w-xl font-body leading-relaxed mb-8 mx-auto md:mx-0">
+        <p className="text-base md:text-xl text-[#808080] max-w-2xl font-body leading-relaxed mb-10 mx-auto lg:mx-0 px-4 lg:px-0">
           Unlock your potential with one-click expert tutor bookings. Professional mentorship tailored for every class, subject, and national competitive exam.
         </p>
-        <div className="flex flex-col sm:flex-row gap-6">
-          <a href={`${import.meta.env.VITE_STUDENT_HUB_URL}/?view=login`} className="bg-primary text-on-primary px-8 md:px-10 py-4 md:py-5 rounded-md text-base md:text-lg font-medium shadow-xl hover:translate-y-[-4px] transition-all duration-300 flex items-center justify-center group">
+        <div className="flex flex-col sm:flex-row gap-5 px-6 sm:px-0 justify-center lg:justify-start">
+          <a href={`${import.meta.env.VITE_STUDENT_HUB_URL}/?view=login`} className="bg-primary text-white px-10 py-5 rounded-md text-base md:text-lg font-bold shadow-xl shadow-primary/20 hover:translate-y-[-4px] transition-all flex items-center justify-center">
             Book a Tutor
           </a>
-          <a href={`${import.meta.env.VITE_TUTOR_DASHBOARD_URL}/?view=login`} className="bg-white text-[#808080] px-8 md:px-10 py-4 md:py-5 rounded-none text-base md:text-lg font-medium shadow-[8px_8px_0px_0px_rgba(53,53,53,0.1)] hover:translate-y-[-4px] transition-all duration-300 flex items-center justify-center group border-2 border-primary">
+          <a href={`${import.meta.env.VITE_TUTOR_DASHBOARD_URL}/?view=login`} className="bg-white text-[#353535] px-10 py-5 rounded-none text-base md:text-lg font-bold shadow-[8px_8px_0px_0px_rgba(53,53,53,0.1)] hover:translate-y-[-4px] transition-all flex items-center justify-center border-2 border-primary">
             Join as Tutor
           </a>
         </div>
       </div>
-      <div className="md:col-span-5 relative h-full min-h-[300px] md:min-h-[500px] mt-12 md:mt-0">
+      <div className="lg:col-span-5 relative h-full min-h-[400px] lg:min-h-[600px] mt-10 lg:mt-0">
         <div className="absolute inset-0 bg-slate-100 overflow-hidden">
           <img alt="Classical library desk" fetchpriority="high" loading="eager" className="w-full h-full object-cover grayscale-[10%] hover:grayscale-0 transition-all duration-700" src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&q=80" />
         </div>

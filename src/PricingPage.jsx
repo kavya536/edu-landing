@@ -230,7 +230,8 @@ const PricingPage = ({ onBack }) => {
           </p>
 
           {/* Category Toggle */}
-          <div className="inline-flex p-1 bg-slate-100 rounded-2xl shadow-inner mb-12">
+          <div className="flex p-1 bg-slate-100 rounded-2xl shadow-inner mb-12 max-w-full overflow-x-auto no-scrollbar whitespace-nowrap">
+            <div className="flex min-w-max gap-1">
             {categories.map((cat) => (
               <button
                 key={cat.id}
@@ -244,6 +245,7 @@ const PricingPage = ({ onBack }) => {
                 {cat.label}
               </button>
             ))}
+            </div>
           </div>
         </div>
 
