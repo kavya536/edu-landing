@@ -74,14 +74,6 @@ const Navbar = ({ setView }) => {
                 <ArrowRight size={20} className="text-primary opacity-0 group-hover:opacity-100 transition-all" />
               </a>
             ))}
-            <div className="flex flex-col gap-4 pt-6">
-              <a href={`${import.meta.env.VITE_STUDENT_HUB_URL}/?view=login`} className="w-full text-center bg-primary text-white py-5 rounded-md font-bold shadow-xl shadow-primary/20 text-lg">
-                Book a Tutor
-              </a>
-              <a href={`${import.meta.env.VITE_TUTOR_DASHBOARD_URL}/?view=login`} className="w-full text-center bg-white text-[#353535] py-5 rounded-none font-bold border-2 border-primary shadow-[4px_4px_0px_0px_rgba(53,53,53,0.1)] text-lg">
-                Join as Tutor
-              </a>
-            </div>
           </div>
         </div>
       )}
