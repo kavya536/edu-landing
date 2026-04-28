@@ -204,6 +204,60 @@ const PricingPage = ({ onBack }) => {
     ]
   };
 
+  const [isProcessing, setIsProcessing] = useState(false);
+
+  const handlePayment = async (plan) => {
+    if (plan.price === '0') {
+      // Free plan: redirect to registration directly
+      window.location.href = `${import.meta.env.VITE_STUDENT_HUB_URL}/register?plan=${plan.tier}`;
+      return;
+    }
+
+    setIsProcessing(true);
+    try {
+      // 1. Create Order on Backend (using the same backend at localhost:5001)
+      const orderResponse = await fetch('http://localhost:5001/api/create-razorpay-order', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ 
+          amount: parseFloat(plan.price),
+          receipt: `landing_${Date.now()}`
+        })
+      });
+
+      const orderData = await orderResponse.json();
+      if (!orderResponse.ok) throw new Error(orderData.message || 'Failed to create order');
+
+      // 2. Open Razorpay Checkout
+      const options = {
+        key: import.meta.env.VITE_RAZORPAY_KEY_ID, 
+        amount: orderData.amount,
+        currency: orderData.currency,
+        name: "Eduqra Plan Purchase",
+        description: `${plan.name} Plan Membership`,
+        image: "/logo.png",
+        order_id: orderData.orderId,
+        handler: function (response) {
+          // On Success: Redirect to Student Hub with payment info
+          const targetUrl = `${import.meta.env.VITE_STUDENT_HUB_URL}/register?plan=${plan.name.toLowerCase()}&pay_id=${response.razorpay_payment_id}&order_id=${response.razorpay_order_id}`;
+          window.location.href = targetUrl;
+        },
+        theme: { color: "#000000" },
+        modal: {
+          ondismiss: function() { setIsProcessing(false); }
+        }
+      };
+
+      const rzp = new window.Razorpay(options);
+      rzp.open();
+
+    } catch (err) {
+      console.error('❌ Payment Error:', err);
+      alert("Payment failed to initialize: " + err.message);
+      setIsProcessing(false);
+    }
+  };
+
   const currentPlans = plans[activeCategory];
 
   return (
@@ -295,12 +349,15 @@ const PricingPage = ({ onBack }) => {
                 ))}
               </div>
 
-              <button className={`w-full py-4 rounded-xl font-bold transition-all duration-300 ${
+              <button 
+                onClick={() => handlePayment(plan)}
+                disabled={isProcessing}
+                className={`w-full py-4 rounded-xl font-bold transition-all duration-300 ${
                 plan.highlight 
                   ? 'bg-primary text-white hover:bg-primary-dark shadow-md' 
                   : 'bg-slate-900 text-white hover:bg-slate-800'
-              }`}>
-                {plan.buttonText}
+              } ${isProcessing ? 'opacity-50 cursor-not-allowed' : ''}`}>
+                {isProcessing ? 'Processing...' : plan.buttonText}
               </button>
             </div>
           ))}
