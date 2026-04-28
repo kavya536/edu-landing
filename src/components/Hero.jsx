@@ -4,9 +4,9 @@ const Hero = () => (
   <section className="relative min-h-[90vh] md:min-h-[700px] flex items-center overflow-hidden px-6 md:px-12 bg-surface py-20 md:py-32">
     <div className="max-w-screen-2xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center w-full">
       <div className="lg:col-span-7 z-10 text-center lg:text-left pt-10 lg:pt-0">
-        <h1 className="text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-serif font-bold text-[#353535] tracking-tight mb-8">
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-serif font-bold text-[#353535] tracking-tight mb-8">
           <span className="block leading-tight">Bridging the Gap</span>
-          <span className="block mt-2 italic font-normal text-primary">Between You & Success</span>
+          <span className="block mt-2 italic font-normal text-primary text-2xl sm:text-3xl lg:text-4xl xl:text-5xl">Between You & Success</span>
         </h1>
         <p className="text-base md:text-xl text-[#808080] max-w-2xl font-body leading-relaxed mb-10 mx-auto lg:mx-0 px-4 lg:px-0">
           Unlock your potential with one-click expert tutor bookings. Professional mentorship tailored for every class, subject, and national competitive exam.
