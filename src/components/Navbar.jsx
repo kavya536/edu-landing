@@ -8,7 +8,7 @@ const Navbar = ({ setView }) => {
     { label: 'Our Tutors', href: '#expert-tutors', view: 'landing' },
     { label: 'How it Works', href: '#how-it-works', view: 'landing' },
     { label: 'Curriculum', href: '#curriculum', view: 'landing' },
-    { label: 'Testimonials', href: '#testimonials', view: 'landing' },
+    { label: 'Success Stories', href: '#testimonials', view: 'landing' },
     { label: 'Pricing', href: '#pricing', view: 'pricing' },
   ];
 

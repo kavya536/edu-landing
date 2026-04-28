@@ -30,7 +30,7 @@ const Footer = ({ setView }) => (
               <li><a className="font-body text-xs tracking-wide text-slate-600 font-semibold hover:text-primary transition-all whitespace-nowrap" href="#expert-tutors">Our Tutors</a></li>
               <li><a className="font-body text-xs tracking-wide text-slate-600 font-semibold hover:text-primary transition-all whitespace-nowrap" href="#how-it-works">How it Works</a></li>
               <li><a className="font-body text-xs tracking-wide text-slate-600 font-semibold hover:text-primary transition-all whitespace-nowrap" href="#curriculum">Curriculum</a></li>
-              <li><a className="font-body text-xs tracking-wide text-slate-600 font-semibold hover:text-primary transition-all whitespace-nowrap" href="#testimonials">Testimonials</a></li>
+              <li><a className="font-body text-xs tracking-wide text-slate-600 font-semibold hover:text-primary transition-all whitespace-nowrap" href="#testimonials">Success Stories</a></li>
             </ul>
           </div>
           <div>
