@@ -1,21 +1,21 @@
 import React from 'react';
 
 const LegalView = ({ title, children, onBack }) => (
-  <div className="min-h-screen bg-slate-50 pt-24 pb-12 px-6">
-    <div className="max-w-3xl mx-auto bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-slate-100">
+  <div className="min-h-screen bg-white pt-24 pb-20 px-6 md:px-12 lg:px-24">
+    <div className="max-w-screen-xl mx-auto">
       <button 
         onClick={onBack}
-        className="flex items-center gap-2 text-primary font-bold mb-8 hover:gap-3 transition-all"
+        className="flex items-center gap-2 text-primary font-bold mb-12 hover:gap-3 transition-all group"
       >
-        <span className="material-symbols-outlined">arrow_back</span>
+        <span className="material-symbols-outlined group-hover:-translate-x-1 transition-transform">arrow_back</span>
         Back to Home
       </button>
       
-      <h1 className="text-3xl md:text-4xl font-serif italic text-slate-900 mb-8 border-b border-slate-100 pb-4">
+      <h1 className="text-4xl md:text-6xl font-serif italic text-slate-900 mb-12 border-b border-slate-100 pb-8">
         {title}
       </h1>
       
-      <div className="prose prose-slate max-w-none font-body text-slate-600 leading-relaxed">
+      <div className="prose prose-xl prose-slate max-w-none font-body text-slate-700 leading-relaxed">
         {children}
       </div>
     </div>
@@ -80,24 +80,24 @@ export const RefundPolicy = ({ onBack }) => (
   <LegalView title="Refund & Cancellation Policy" onBack={onBack}>
     <p className="mb-6 italic">Our policy ensures that your learning journey continues smoothly even if plans change. We prioritize rescheduling and credit-based transitions to new tutors.</p>
 
-    <section className="mb-8">
-      <h2 className="text-xl font-bold text-slate-800 mb-4">1. Cancellation & Account Credits</h2>
-      <p className="mb-4">When a session is cancelled, the eligible amount (based on your subscription tier) is first issued as <strong>Eduqra Account Credit</strong>. This allows you to immediately book a session with any other available tutor on our platform.</p>
+    <section className="mb-12">
+      <h2 className="text-2xl font-bold text-slate-800 mb-6">1. Cancellation & Account Credits</h2>
+      <p className="mb-6">When a session is cancelled, the eligible amount (based on your subscription tier) is first issued as <strong>Eduqra Account Credit</strong>. This allows you to immediately book a session with any other available tutor on our platform.</p>
       
-      <div className="space-y-4">
-        <div className="bg-slate-50 p-4 rounded-xl border-l-4 border-primary">
-          <h3 className="font-bold text-slate-900">Premium Plan</h3>
-          <p>Eligible for <strong>40% account credit</strong> of the remaining session value if cancelled at least 10 days before scheduled completion.</p>
+      <div className="space-y-8 ml-4">
+        <div>
+          <h3 className="text-xl font-bold text-slate-900 mb-2">• Premium Plan</h3>
+          <p className="text-lg">Eligible for <strong>40% account credit</strong> of the remaining session value if cancelled at least 10 days before scheduled completion.</p>
         </div>
         
-        <div className="bg-slate-50 p-4 rounded-xl border-l-4 border-slate-400">
-          <h3 className="font-bold text-slate-900">Standard Plan</h3>
-          <p>Eligible for <strong>20% account credit</strong> of the remaining session value if cancelled at least 10 days before scheduled completion.</p>
+        <div>
+          <h3 className="text-xl font-bold text-slate-900 mb-2">• Standard Plan</h3>
+          <p className="text-lg">Eligible for <strong>20% account credit</strong> of the remaining session value if cancelled at least 10 days before scheduled completion.</p>
         </div>
 
-        <div className="bg-slate-50 p-4 rounded-xl border-l-4 border-slate-200">
-          <h3 className="font-bold text-slate-900">Free Plan</h3>
-          <p>Sessions under the Free tier are non-refundable and not eligible for account credits.</p>
+        <div>
+          <h3 className="text-xl font-bold text-slate-900 mb-2">• Free Plan</h3>
+          <p className="text-lg">Sessions under the Free tier are non-refundable and not eligible for account credits.</p>
         </div>
       </div>
     </section>
