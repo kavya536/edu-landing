@@ -3,7 +3,7 @@ import React from 'react';
 const Footer = ({ setView }) => (
   <footer className="bg-slate-50 border-t border-slate-200 pt-8 pb-4 px-6 md:px-12">
     <div className="max-w-screen-2xl mx-auto">
-      <div className="flex flex-col lg:flex-row justify-between items-start gap-12">
+      <div className="flex flex-col lg:flex-row justify-between items-start gap-12 pr-6 md:pr-12 lg:pr-64">
         <div className="max-w-xs shrink-0">
           <div className="mb-1">
             <img src="/logo.png" alt="Eduqra" className="h-16 w-auto object-contain" loading="lazy" />
@@ -23,7 +23,7 @@ const Footer = ({ setView }) => (
           </div>
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-12 lg:gap-16">
+        <div className="flex flex-col sm:flex-row gap-12 lg:gap-40">
           <div>
             <h4 className="text-slate-900 font-black mb-6 text-xs tracking-widest uppercase whitespace-nowrap">Our Services</h4>
             <ul className="space-y-4">
