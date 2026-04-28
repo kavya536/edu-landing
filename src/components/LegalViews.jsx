@@ -107,7 +107,7 @@ export const RefundPolicy = ({ onBack }) => (
 
     <section className="mb-12">
       <h2 className="text-2xl font-bold text-slate-800 mb-4">3. Tutor-Side Cancellations</h2>
-      <p>If a tutor cancels a session, you receive 100% credit of the session value. You may use this to book another tutor or request a full refund to your original payment method.</p>
+      <p>If a tutor cancels a session, you receive 100% credit of the session value. You may use this credit to book another tutor on the Eduqra platform.</p>
     </section>
 
     <section className="mb-12">
