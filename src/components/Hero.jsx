@@ -1,9 +1,9 @@
 import React from 'react';
 
 const Hero = () => (
-  <section className="relative flex overflow-hidden px-6 md:px-12 bg-surface pt-28 md:pt-36 pb-20 md:pb-32">
+  <section className="relative flex items-center overflow-hidden px-6 md:px-12 bg-surface pt-28 md:pt-32 pb-16 md:pb-20">
     <div className="max-w-screen-2xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center w-full">
-      <div className="lg:col-span-7 z-10 text-center lg:text-left pt-10 lg:pt-0">
+      <div className="lg:col-span-7 z-10 text-center lg:text-left pt-0">
         <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-serif font-bold text-[#353535] tracking-tight mb-8">
           <span className="block leading-tight">Bridging the Gap</span>
           <span className="block mt-2 italic font-normal text-primary text-2xl sm:text-3xl lg:text-4xl xl:text-5xl">Between You & Success</span>
