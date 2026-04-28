@@ -39,7 +39,6 @@ const Footer = ({ setView }) => (
               <li><button onClick={() => setView('privacy')} className="font-body text-xs tracking-wide text-slate-600 font-semibold hover:text-primary transition-all whitespace-nowrap">Privacy Policy</button></li>
               <li><button onClick={() => setView('terms')} className="font-body text-xs tracking-wide text-slate-600 font-semibold hover:text-primary transition-all whitespace-nowrap">Terms of Service</button></li>
               <li><button onClick={() => setView('refund')} className="font-body text-xs tracking-wide text-slate-600 font-semibold hover:text-primary transition-all whitespace-nowrap">Refund Policy</button></li>
-              <li><a className="font-body text-xs tracking-wide text-slate-600 font-semibold hover:text-primary transition-all whitespace-nowrap" href={`${import.meta.env.VITE_TUTOR_DASHBOARD_URL}/?view=login`}>Faculty Portal</a></li>
               <li><a className="font-body text-xs tracking-wide text-slate-600 font-semibold hover:text-primary transition-all whitespace-nowrap" href="#contact">Contact Us</a></li>
             </ul>
           </div>
