@@ -5,7 +5,7 @@ const TutorExpertise = () => (
     <div className="max-w-screen-2xl mx-auto">
       <div className="text-center mb-16">
         <h2 className="text-3xl md:text-5xl font-serif font-bold text-[#353535] mb-4">Our Expert Tutors</h2>
-        <div className="w-24 h-1 bg-amber-400 mx-auto"></div>
+        <div className="w-24 h-1 bg-amber-400 mx-auto mb-8"></div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {[
@@ -15,8 +15,8 @@ const TutorExpertise = () => (
           { icon: 'favorite', title: 'Student-Centric Focus', desc: 'Every tutor understands student needs, tracks progress, and ensures consistent improvement.' },
           { icon: 'auto_awesome', title: 'Empowering Future Educators', desc: 'We support passionate fresh graduates and aspiring teachers by providing the right platform to start and grow their teaching careers.' }
         ].map((item, idx) => (
-          <div key={idx} className="bg-white p-8 rounded-2xl shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] border border-slate-100 hover:border-primary/20 transition-all duration-300 group">
-            <div className="w-14 h-14 rounded-xl bg-primary/5 flex items-center justify-center text-[#808080] mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-500">
+          <div key={idx} className="bg-white p-8 rounded-2xl border border-slate-100 hover:border-blue-200 transition-all duration-300 group">
+            <div className="w-14 h-14 rounded-xl bg-primary flex items-center justify-center text-white mb-6 group-hover:bg-[#002b70] group-hover:scale-110 transition-all duration-300">
               <span className="material-symbols-outlined text-3xl">{item.icon}</span>
             </div>
             <h3 className="text-xl md:text-2xl font-serif font-bold text-[#353535] mb-4">{item.title}</h3>

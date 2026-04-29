@@ -1,9 +1,9 @@
 import React from 'react';
 
 const HowItWorks = () => (
-  <section className="pt-10 pb-16 px-6 md:px-12 bg-white scroll-mt-24 min-h-[90vh] flex flex-col justify-center" id="how-it-works">
+  <section className="pt-10 pb-16 px-6 md:px-12 bg-white scroll-mt-24" id="how-it-works">
     <div className="max-w-screen-2xl mx-auto w-full">
-      <div className="max-w-screen-2xl mx-auto text-center mb-24">
+      <div className="max-w-screen-2xl mx-auto text-center mb-10">
         <h2 className="text-3xl md:text-5xl font-serif font-bold text-[#353535] mb-4">How It Works</h2>
         <div className="w-24 h-1 bg-amber-400 mx-auto mb-8"></div>
         <p className="text-[#808080] max-w-2xl text-lg mx-auto">A refined, four-step journey toward academic excellence.</p>

@@ -39,7 +39,7 @@ const PricingPage = ({ onBack }) => {
       {
         name: 'Standard',
         type: 'Scholar',
-        price: '599',
+        price: '9/-',
         period: 'every 3 months',
         description: 'Comprehensive support for multiple core subjects.',
         highlight: 'Most Popular',
@@ -98,7 +98,7 @@ const PricingPage = ({ onBack }) => {
       {
         name: 'Standard',
         type: 'Achiever',
-        price: '599',
+        price: '9/-',
         period: 'every 3 months',
         description: 'Enhanced learning for competitive edge.',
         highlight: 'Best Value',
@@ -161,7 +161,7 @@ const PricingPage = ({ onBack }) => {
       {
         name: 'Standard',
         type: 'Professional',
-        price: '599',
+        price: '9/-',
         period: 'every 3 months',
         description: 'Advanced curriculum for degree tracks.',
         highlight: 'Recommended',
@@ -205,6 +205,7 @@ const PricingPage = ({ onBack }) => {
   };
 
   const [isProcessing, setIsProcessing] = useState(false);
+  const [openFaqIndex, setOpenFaqIndex] = useState(null);
 
   const handlePayment = async (plan) => {
     if (plan.price === '0') {
@@ -278,7 +279,8 @@ const PricingPage = ({ onBack }) => {
       <main className="max-w-screen-xl mx-auto px-6 py-16 md:py-24">
         {/* Header Section */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-6xl font-serif font-bold text-slate-900 mb-6 transition-all">Explore plans</h1>
+          <h1 className="text-4xl md:text-6xl font-serif font-bold text-slate-900 mb-4 transition-all">Explore plans</h1>
+          <div className="w-24 h-1 bg-amber-400 mx-auto mb-8"></div>
           <p className="text-lg text-slate-500 max-w-2xl mx-auto mb-10 leading-relaxed">
             Choose the perfect learning journey tailored to your academic needs and goals.
           </p>
@@ -289,10 +291,10 @@ const PricingPage = ({ onBack }) => {
               <button
                 key={cat.id}
                 onClick={() => setActiveCategory(cat.id)}
-                className={`px-1 md:px-6 py-2.5 md:py-3 rounded-xl text-[10px] sm:text-xs md:text-sm font-black tracking-tight transition-all duration-300 ${
+                className={`px-1 md:px-6 py-2.5 md:py-3 rounded-xl text-[10px] sm:text-xs md:text-sm tracking-tight transition-all duration-300 ${
                   activeCategory === cat.id 
-                    ? 'bg-white text-primary shadow-sm scale-100' 
-                    : 'text-slate-500 hover:text-slate-700 hover:bg-slate-50/50'
+                    ? 'bg-white text-primary shadow-sm scale-100 font-bold' 
+                    : 'text-slate-500 hover:text-slate-700 hover:bg-slate-50/50 font-normal'
                 }`}
               >
                 {cat.label.split(' ')[0]}
@@ -363,10 +365,11 @@ const PricingPage = ({ onBack }) => {
           ))}
         </div>
 
-        {/* FAQ Section Style Helper */}
+        {/* FAQ Section */}
         <div className="pt-24 border-t border-slate-200">
            <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-serif font-bold text-slate-900 mb-4">Frequently asked questions</h2>
+            <div className="w-24 h-1 bg-amber-400 mx-auto mb-8"></div>
           </div>
           <div className="max-w-3xl mx-auto space-y-6">
             {[
@@ -375,14 +378,19 @@ const PricingPage = ({ onBack }) => {
               { q: 'How does the refund policy work?', a: 'We offer a 20% refund for Standard plans and a 40% refund for Premium plans. This is applicable ONLY if the refund is requested at least 10 days before the completion of your classes or course.' },
               { q: 'What payment methods are supported?', a: 'We support all major UPI apps, Debit/Credit cards, and Net Banking for seamless slot confirmation.' }
             ].map((faq, i) => (
-              <div key={i} className="group border-b border-slate-100 pb-6">
-                <div className="flex items-center justify-between cursor-pointer">
-                  <h4 className="text-lg font-bold text-slate-800 group-hover:text-primary transition-colors">{faq.q}</h4>
-                  <div className="text-slate-400 font-light text-3xl transition-transform duration-300 group-hover:rotate-90">+</div>
+              <div key={i} className="border-b border-slate-100 pb-6">
+                <div 
+                  className="flex items-center justify-between cursor-pointer"
+                  onClick={() => setOpenFaqIndex(openFaqIndex === i ? null : i)}
+                >
+                  <h4 className={`text-lg font-bold transition-colors ${openFaqIndex === i ? 'text-primary' : 'text-slate-800 hover:text-primary'}`}>{faq.q}</h4>
+                  <div className={`text-slate-400 font-light text-3xl transition-transform duration-300 ${openFaqIndex === i ? 'rotate-45 text-primary' : ''}`}>+</div>
                 </div>
-                <div className="mt-4 text-slate-500 text-sm leading-relaxed hidden group-hover:block transition-all duration-300">
-                  {faq.a}
-                </div>
+                {openFaqIndex === i && (
+                  <div className="mt-4 text-slate-500 text-sm leading-relaxed animate-fade-in">
+                    {faq.a}
+                  </div>
+                )}
               </div>
             ))}
           </div>

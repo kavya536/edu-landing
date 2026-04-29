@@ -5,14 +5,15 @@ const Masterclass = () => (
     <div className="max-w-screen-2xl mx-auto">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 items-start">
         {/* Sticky Heading */}
-        <div className="lg:col-span-5 lg:sticky lg:top-40">
-          <h2 className="text-4xl md:text-6xl font-serif font-bold text-[#353535] leading-tight">
+        <div className="lg:col-span-5 lg:sticky lg:top-40 text-center">
+          <h2 className="text-4xl md:text-6xl font-serif font-bold text-[#353535] leading-tight mb-4">
             A Masterclass <br className="hidden md:block" />in Your Own <br className="hidden md:block" />Progress.
           </h2>
+          <div className="w-24 h-1 bg-amber-400 mb-8 mx-auto"></div>
         </div>
 
         {/* Vertical Progress Items */}
-        <div className="lg:col-span-7 space-y-32 md:space-y-48 pb-20">
+        <div className="lg:col-span-7 space-y-12 md:space-y-16 pb-20">
           {[
             { num: '01', title: 'Instant Matching', desc: 'Our smart algorithm instantly pairs you with a tutor whose teaching style matches your specific learning needs and class level.' },
             { num: '02', title: 'Gap Analysis', desc: 'We identify exactly where you are struggling and create a personalized roadmap to bridge those knowledge gaps.' },

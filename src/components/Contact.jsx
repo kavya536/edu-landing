@@ -4,17 +4,15 @@ const Contact = ({ onViewPricing }) => (
   <>
     {/* Section: Final CTA */}
     <section className="py-20 px-6 md:px-12 bg-primary">
-      <div className="max-w-4xl mx-auto text-center bg-primary editorial-gradient p-12 rounded-xl relative overflow-hidden shadow-2xl">
-        <div className="absolute top-0 right-0 p-10 opacity-10">
-          <span className="material-symbols-outlined text-[15rem]">history_edu</span>
-        </div>
+      <div className="max-w-4xl mx-auto text-center bg-primary editorial-gradient p-12 rounded-xl relative overflow-hidden">
         <div className="relative z-10">
-          <h2 className="text-3xl md:text-6xl font-serif font-bold text-white mb-8 tracking-tight">Start Your Journey Today</h2>
+          <h2 className="text-3xl md:text-6xl font-serif font-bold text-white mb-4 tracking-tight">Start Your Journey Today</h2>
+          <div className="w-24 h-1 bg-amber-400 mx-auto mb-8"></div>
           <p className="text-white/90 text-xl mb-12 max-w-xl mx-auto leading-relaxed">
             Join an elite circle of scholars and redefine what you thought was possible in your academic pursuit.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-6">
-            <a href={`${import.meta.env.VITE_STUDENT_HUB_URL}/?view=login`} className="bg-white text-[#808080] px-12 py-5 rounded-md font-bold text-lg hover:scale-105 transition-transform duration-300 shadow-xl flex items-center justify-center">
+            <a href={`${import.meta.env.VITE_STUDENT_HUB_URL}/?view=login`} className="bg-white text-[#808080] px-12 py-5 rounded-md font-bold text-lg hover:scale-105 transition-transform duration-300 flex items-center justify-center">
               Book a Tutor
             </a>
             <button 
@@ -34,10 +32,11 @@ const Contact = ({ onViewPricing }) => (
 
     <section id="contact" className="py-16 px-6 md:px-12 bg-white scroll-mt-20">
       <div className="max-w-screen-xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-start">
           <div>
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#353535] mb-6 tracking-tight leading-tight">Have Questions?<br/>Let's Connect</h2>
-            <p className="text-[#808080] text-base md:text-lg mb-10 max-w-md leading-relaxed">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#353535] mb-4 tracking-tight leading-tight text-center">Have Questions?<br/>Let's Connect</h2>
+            <div className="w-24 h-1 bg-amber-400 mb-6 mx-auto"></div>
+            <p className="text-[#808080] text-base md:text-lg mb-8 max-w-md mx-auto text-center leading-relaxed">
               Our academic advisors are here to help you find the perfect tutor and build a roadmap for your success.
             </p>
             <div className="space-y-6">

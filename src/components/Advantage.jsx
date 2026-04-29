@@ -3,17 +3,15 @@ import React from 'react';
 const Advantage = () => (
   <section className="py-12 px-6 md:px-12 bg-white">
     <div className="max-w-screen-2xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
-      <div className="relative group">
-        <div className="absolute -inset-4 bg-tertiary/10 rounded-2xl scale-95 group-hover:scale-100 transition-transform duration-700"></div>
-        <div className="relative rounded-xl overflow-hidden shadow-2xl">
-          <img alt="Personalized Learning" className="w-full h-full object-cover aspect-video hover:scale-105 transition-transform duration-1000" src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&q=80&w=800" loading="lazy" />
-          <div className="absolute bottom-6 left-6 bg-white/90 backdrop-blur p-4 rounded-lg shadow-lg">
-            <p className="text-[#808080] font-serif font-bold italic">"Bridging the Gap to Success"</p>
-          </div>
+      <div className="relative rounded-xl overflow-hidden border border-slate-100">
+        <img alt="Personalized Learning" className="w-full h-full object-cover aspect-video hover:scale-105 transition-transform duration-1000" src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&q=80&w=800" loading="lazy" />
+        <div className="absolute bottom-6 left-6 bg-white/90 backdrop-blur p-4 rounded-lg">
+          <p className="text-[#808080] font-serif font-bold italic">"Bridging the Gap to Success"</p>
         </div>
       </div>
       <div>
-        <h2 className="text-3xl md:text-5xl font-serif font-bold text-[#353535] mb-8 tracking-tight">The Eduqra Advantage</h2>
+        <h2 className="text-3xl md:text-5xl font-serif font-bold text-[#353535] mb-4 tracking-tight text-center">The Eduqra Advantage</h2>
+        <div className="w-24 h-1 bg-amber-400 mb-8 mx-auto"></div>
         <ul className="space-y-6">
           {[
             { title: 'Global Expertise', desc: 'Connect with mentors from top institutions across the country.' },

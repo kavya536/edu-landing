@@ -18,7 +18,7 @@ export default {
         "surface-dim": "#d9dadb",
         "on-surface-variant": "#808080",
         "on-error-container": "#93000a",
-        "primary": "#124398",
+        "primary": "#003892",
         "surface": "#f8f9fa",
         "on-secondary-fixed-variant": "#2d4b57",
         "inverse-surface": "#2e3132",

@@ -5,15 +5,16 @@ const Testimonials = () => (
     <div className="max-w-screen-2xl mx-auto">
       <div className="flex flex-col md:flex-row gap-12 items-center">
         <div className="w-full md:w-5/12 relative mx-auto md:mx-0">
-          <div className="aspect-square max-w-sm bg-surface-container-highest rounded-xl overflow-hidden shadow-2xl relative group">
+          <div className="aspect-square max-w-md rounded-xl overflow-hidden border border-slate-100 relative group">
             <img alt="Students in library" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="/testimonial.png" loading="lazy" />
             <div className="absolute top-6 right-6">
               <span className="material-symbols-outlined text-white text-4xl drop-shadow-lg opacity-80 hover:opacity-100 transition-opacity" style={{ fontVariationSettings: "'FILL' 1" }}>format_quote</span>
             </div>
           </div>
         </div>
-        <div className="w-full md:w-7/12 text-center md:text-left">
-          <h2 className="text-3xl md:text-5xl font-serif font-bold text-[#353535] mb-12">Success Stories</h2>
+        <div className="w-full md:w-7/12 text-center">
+          <h2 className="text-3xl md:text-5xl font-serif font-bold text-[#353535] mb-4">Success Stories</h2>
+          <div className="w-24 h-1 bg-amber-400 mx-auto mb-12"></div>
           <div className="space-y-10">
             <div>
               <p className="text-lg md:text-2xl font-serif italic text-[#808080] leading-relaxed mb-6">

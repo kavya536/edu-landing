@@ -40,8 +40,8 @@ const Navbar = ({ setView }) => {
               ))}
             </div>
             <div className="flex items-center space-x-3 lg:space-x-6">
-              <a href={`${import.meta.env.VITE_TUTOR_DASHBOARD_URL}/?view=login`} className="hidden lg:inline-flex items-center bg-white text-[#353535] px-5 py-2.5 rounded-none font-bold hover:translate-y-[-2px] transition-all text-sm border-2 border-primary shadow-[4px_4px_0px_0px_rgba(53,53,53,0.1)]">Join as Tutor</a>
-              <a href={`${import.meta.env.VITE_STUDENT_HUB_URL}/?view=login`} className="bg-primary text-white px-4 lg:px-6 py-2.5 rounded-md font-bold hover:translate-y-[-2px] transition-transform shadow-lg shadow-primary/20 text-sm">
+              <a href={`${import.meta.env.VITE_TUTOR_DASHBOARD_URL}/?view=login`} className="hidden lg:inline-flex items-center bg-white text-[#353535] px-5 py-2.5 rounded-md font-bold transition-all text-sm border-2 border-primary">Join as Tutor</a>
+              <a href={`${import.meta.env.VITE_STUDENT_HUB_URL}/?view=login`} className="bg-primary text-white px-4 lg:px-6 py-2.5 rounded-md font-bold transition-transform text-sm">
                 Book a Tutor
               </a>
             </div>
