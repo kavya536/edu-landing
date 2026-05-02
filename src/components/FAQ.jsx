@@ -1,7 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) setIsVisible(true);
+      },
+      { threshold: 0.1 }
+    );
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
 
   const faqs = [
     { q: "How are Eduqra tutors selected?", a: "Each tutor undergoes a rigorous 4-step vetting process including subject proficiency tests, demo sessions, and background verification from top academic institutions." },
@@ -13,11 +26,12 @@ const FAQ = () => {
   ];
 
   return (
-    <section className="pt-2 pb-12 px-6 md:px-12 bg-white scroll-mt-20" id="faq">
+    <section ref={sectionRef} className="pt-16 pb-20 px-6 md:px-12 bg-[#F8F9FA] scroll-mt-20" id="faq">
       <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-serif font-bold text-[#353535] mb-4">Common Questions</h2>
-          <div className="w-24 h-1 bg-amber-400 mx-auto mb-8"></div>
+        <div className={`text-center mb-16 transition-all duration-1000 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
+          <h2 className="text-4xl md:text-5xl font-serif font-bold text-[#202020] mb-2 leading-tight">
+            Common <span className="italic font-normal text-gradient">Questions</span>
+          </h2>
           <p className="text-[#808080]">Everything you need to know about starting with Eduqra.</p>
         </div>
         <div className="space-y-4">

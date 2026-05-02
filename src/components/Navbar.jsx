@@ -19,19 +19,19 @@ const Navbar = ({ setView }) => {
 
   return (
     <nav className="fixed top-0 w-full z-50 bg-slate-50/85 backdrop-blur-xl shadow-[0_32px_64px_-15px_rgba(0,0,0,0.06)] border-b border-slate-200/50">
-      <div className="max-w-screen-2xl mx-auto px-6 md:px-12">
-        <div className="flex justify-between items-center h-20 md:h-24">
+      <div className="max-w-screen-2xl mx-auto px-2 md:px-4">
+        <div className="flex justify-between items-center h-16 md:h-20">
           <a href="#" className="flex items-center gap-3" onClick={() => setView('landing')}>
-            <img src="/logo.png" alt="Eduqra Logo" className="h-10 md:h-14 w-auto object-contain" />
+            <img src="/logo.png" alt="Eduqra Logo" className="h-8 md:h-12 w-auto object-contain" />
           </a>
 
           {/* Desktop Nav - Full view for Laptop/Tablet */}
-          <div className="hidden md:flex items-center space-x-6 lg:space-x-12">
-            <div className="flex items-center space-x-4 lg:space-x-10">
+          <div className="hidden md:flex items-center space-x-6 lg:space-x-10">
+            <div className="flex items-center space-x-4 lg:space-x-8">
               {navLinks.map((link) => (
                 <a 
                   key={link.label}
-                  className="font-headline tracking-tight font-medium text-[#353535] hover:text-primary transition-colors text-sm lg:text-base" 
+                  className="font-headline tracking-tight font-bold text-[#404040] hover:text-edu-blue transition-colors text-sm lg:text-base" 
                   href={link.href} 
                   onClick={() => handleNavClick(link)}
                 >
@@ -39,9 +39,19 @@ const Navbar = ({ setView }) => {
                 </a>
               ))}
             </div>
-            <div className="flex items-center space-x-3 lg:space-x-6">
-              <a href={`${import.meta.env.VITE_TUTOR_DASHBOARD_URL}/?view=login`} className="hidden lg:inline-flex items-center bg-white text-[#353535] px-5 py-2.5 rounded-md font-bold transition-all text-sm border-2 border-primary">Join as Tutor</a>
-              <a href={`${import.meta.env.VITE_STUDENT_HUB_URL}/?view=login`} className="bg-primary text-white px-4 lg:px-6 py-2.5 rounded-md font-bold transition-transform text-sm">
+            <div className="flex items-center space-x-4 lg:space-x-6">
+              <a 
+                href={`${import.meta.env.VITE_TUTOR_DASHBOARD_URL}/?view=login`} 
+                className="hidden lg:inline-flex items-center bg-white px-6 py-3 rounded-xl font-bold transition-all text-sm border-2 active:scale-95"
+                style={{ color: '#004AAD', borderColor: 'rgba(0, 74, 173, 0.2)' }}
+                onMouseOver={(e) => e.currentTarget.style.borderColor = '#004AAD'}
+                onMouseOut={(e) => e.currentTarget.style.borderColor = 'rgba(0, 74, 173, 0.2)'}
+              >Join as Tutor</a>
+              <a 
+                href={`${import.meta.env.VITE_STUDENT_HUB_URL}/?view=login`} 
+                className="text-white px-6 lg:px-8 py-3 rounded-xl font-bold transition-all text-sm shadow-lg hover:scale-[1.05] active:scale-95"
+                style={{ backgroundColor: '#004AAD', boxShadow: '0 10px 15px -3px rgba(0, 74, 173, 0.2)' }}
+              >
                 Book a Tutor
               </a>
             </div>

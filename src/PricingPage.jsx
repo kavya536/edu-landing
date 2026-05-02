@@ -276,11 +276,10 @@ const PricingPage = ({ onBack }) => {
         <div className="w-24"></div> {/* Spacer */}
       </nav>
 
-      <main className="max-w-screen-xl mx-auto px-6 py-16 md:py-24">
+      <main className="max-w-screen-xl mx-auto px-6 py-24 md:py-32">
         {/* Header Section */}
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-6xl font-serif font-bold text-slate-900 mb-4 transition-all">Explore plans</h1>
-          <div className="w-24 h-1 bg-amber-400 mx-auto mb-8"></div>
           <p className="text-lg text-slate-500 max-w-2xl mx-auto mb-10 leading-relaxed">
             Choose the perfect learning journey tailored to your academic needs and goals.
           </p>
@@ -309,42 +308,42 @@ const PricingPage = ({ onBack }) => {
           {currentPlans.map((plan, index) => (
             <div 
               key={index}
-              className={`relative flex flex-col bg-white rounded-[2rem] p-8 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 border ${
-                plan.highlight ? 'border-primary/20 shadow-xl' : 'border-slate-100'
+              className={`relative flex flex-col bg-white rounded-[2.5rem] p-10 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 border ${
+                plan.highlight ? 'border-edu-blue/20 shadow-xl' : 'border-slate-100'
               }`}
             >
               {plan.highlight && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-white text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full shadow-lg">
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-edu-green text-white text-[10px] font-black uppercase tracking-[0.2em] px-6 py-2 rounded-full shadow-lg">
                   {plan.highlight}
                 </div>
               )}
 
-              <div className="mb-8">
-                <div className={`w-12 h-12 rounded-2xl flex items-center justify-center mb-6 ${
-                  plan.color === 'indigo' ? 'bg-indigo-50 text-indigo-600' : 
-                  plan.color === 'blue' ? 'bg-blue-50 text-blue-600' : 'bg-slate-50 text-slate-600'
+              <div className="mb-10">
+                <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-8 shadow-sm ${
+                  plan.color === 'indigo' ? 'bg-edu-blue text-white' : 
+                  plan.color === 'blue' ? 'bg-edu-teal text-white' : 'bg-slate-50 text-slate-400'
                 }`}>
-                  {plan.name === 'Premium' ? <Crown className="w-6 h-6" /> : 
-                   plan.name === 'Standard' ? <Star className="w-6 h-6" /> : <Shield className="w-6 h-6" />}
+                  {plan.name === 'Premium' ? <Crown className="w-8 h-8" /> : 
+                   plan.name === 'Standard' ? <Star className="w-8 h-8" /> : <Shield className="w-8 h-8" />}
                 </div>
-                <h3 className="text-2xl font-serif font-bold text-slate-900 mb-1">{plan.name}</h3>
-                <p className="text-sm font-medium text-slate-400 mb-6">{plan.type}</p>
-                <div className="flex items-baseline gap-1">
-                  <span className="text-4xl font-bold text-slate-900">₹{plan.price}</span>
+                <h3 className="text-3xl font-serif font-bold text-[#202020] mb-2">{plan.name}</h3>
+                <p className="text-xs font-black text-slate-400 uppercase tracking-widest mb-8">{plan.type}</p>
+                <div className="flex items-baseline gap-2">
+                  <span className="text-5xl font-bold text-[#202020]">₹{plan.price}</span>
                   <span className="text-slate-400 text-sm font-medium">{plan.period}</span>
                 </div>
-                <p className="mt-4 text-slate-500 text-sm leading-relaxed">{plan.description}</p>
+                <p className="mt-6 text-slate-500 text-sm leading-relaxed font-medium">{plan.description}</p>
               </div>
 
-              <div className="flex-1 space-y-4 mb-8">
+              <div className="flex-1 space-y-5 mb-10">
                 {plan.features.map((feature, fIndex) => (
-                  <div key={fIndex} className="flex items-start gap-3">
+                  <div key={fIndex} className="flex items-start gap-4">
                     {feature.included ? (
-                      <Check className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
+                      <Check className={`w-5 h-5 shrink-0 mt-0.5 ${plan.color === 'indigo' ? 'text-edu-blue' : plan.color === 'blue' ? 'text-edu-teal' : 'text-edu-green'}`} />
                     ) : (
                       <X className="w-5 h-5 text-slate-300 shrink-0 mt-0.5" />
                     )}
-                    <span className={`text-sm ${feature.included ? 'text-slate-600' : 'text-slate-400'}`}>
+                    <span className={`text-sm font-medium ${feature.included ? 'text-slate-700' : 'text-slate-400'}`}>
                       {feature.text}
                     </span>
                   </div>
@@ -354,10 +353,10 @@ const PricingPage = ({ onBack }) => {
               <button 
                 onClick={() => handlePayment(plan)}
                 disabled={isProcessing}
-                className={`w-full py-4 rounded-xl font-bold transition-all duration-300 ${
+                className={`w-full py-5 rounded-2xl font-bold text-base transition-all duration-300 shadow-xl ${
                 plan.highlight 
-                  ? 'bg-primary text-white hover:bg-primary-dark shadow-md' 
-                  : 'bg-slate-900 text-white hover:bg-slate-800'
+                  ? 'bg-edu-blue text-white hover:bg-primary/90 shadow-edu-blue/20' 
+                  : 'bg-slate-900 text-white hover:bg-black shadow-slate-200'
               } ${isProcessing ? 'opacity-50 cursor-not-allowed' : ''}`}>
                 {isProcessing ? 'Processing...' : plan.buttonText}
               </button>
@@ -366,10 +365,9 @@ const PricingPage = ({ onBack }) => {
         </div>
 
         {/* FAQ Section */}
-        <div className="pt-24 border-t border-slate-200">
+        <div className="pt-32 border-t border-slate-200">
            <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-serif font-bold text-slate-900 mb-4">Frequently asked questions</h2>
-            <div className="w-24 h-1 bg-amber-400 mx-auto mb-8"></div>
           </div>
           <div className="max-w-3xl mx-auto space-y-6">
             {[

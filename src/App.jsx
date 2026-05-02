@@ -49,7 +49,7 @@ function App() {
     <>
       <Navbar setView={setView} />
 
-      <main className="pt-20 lg:pt-24">
+      <main>
         <Hero />
         <Features />
         

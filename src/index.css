@@ -43,6 +43,21 @@
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
   }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
 }
 
 @layer base {
@@ -59,7 +74,7 @@
 
 .material-symbols-outlined {
   font-family: 'Material Symbols Outlined';
-  font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+  font-variation-settings: 'FILL' 1, 'wght' 600, 'GRAD' 0, 'opsz' 24;
   display: inline-block;
   line-height: 1;
   text-transform: none;
@@ -70,7 +85,21 @@
 }
 
 .editorial-gradient {
-  background: linear-gradient(135deg, #003892 0%, #002b70 100%);
+  background: linear-gradient(135deg, #004AAD 0%, #002b70 100%);
+}
+
+.growth-gradient {
+  background: linear-gradient(135deg, #38B000 0%, #00A896 100%);
+}
+
+.brand-gradient {
+  background: linear-gradient(135deg, #004AAD 0%, #00A8E8 50%, #38B000 100%);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #004AAD 0%, #00A896 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .glass-nav {

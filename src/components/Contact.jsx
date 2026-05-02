@@ -3,111 +3,126 @@ import React from 'react';
 const Contact = ({ onViewPricing }) => (
   <>
     {/* Section: Final CTA */}
-    <section className="py-20 px-6 md:px-12 bg-primary">
-      <div className="max-w-4xl mx-auto text-center bg-primary editorial-gradient p-12 rounded-xl relative overflow-hidden">
+    <section className="py-24 px-6 md:px-12 bg-primary">
+      <div className="max-w-4xl mx-auto text-center editorial-gradient p-12 rounded-3xl relative overflow-hidden shadow-2xl shadow-edu-blue/40">
+        <div className="absolute top-0 left-0 w-full h-full bg-white/5 opacity-10"></div>
         <div className="relative z-10">
-          <h2 className="text-3xl md:text-6xl font-serif font-bold text-white mb-4 tracking-tight">Start Your Journey Today</h2>
-          <div className="w-24 h-1 bg-amber-400 mx-auto mb-8"></div>
+          <h2 className="text-3xl md:text-6xl font-serif font-bold text-white mb-6 tracking-tight">Start Your Journey Today</h2>
           <p className="text-white/90 text-xl mb-12 max-w-xl mx-auto leading-relaxed">
             Join an elite circle of scholars and redefine what you thought was possible in your academic pursuit.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-6">
-            <a href={`${import.meta.env.VITE_STUDENT_HUB_URL}/?view=login`} className="bg-white text-[#808080] px-12 py-5 rounded-md font-bold text-lg hover:scale-105 transition-transform duration-300 flex items-center justify-center">
+            <a href={`${import.meta.env.VITE_STUDENT_HUB_URL}/?view=login`} className="bg-white text-edu-blue px-12 py-5 rounded-xl font-bold text-lg hover:scale-105 transition-transform duration-300 flex items-center justify-center shadow-lg">
               Book a Tutor
             </a>
             <button 
               onClick={onViewPricing}
-              className="bg-white/10 backdrop-blur-md text-white border border-white/20 px-12 py-5 rounded-md font-bold text-lg hover:bg-white/20 transition-all"
+              className="bg-white/10 backdrop-blur-md text-white border border-white/20 px-12 py-5 rounded-xl font-bold text-lg hover:bg-white/20 transition-all"
             >
               View Pricing
             </button>
           </div>
           <p className="mt-12 text-white/60 text-sm flex items-center justify-center gap-2">
-            <span className="material-symbols-outlined text-sm">verified_user</span>
+            <span className="material-symbols-outlined text-sm text-edu-green">verified_user</span>
             100% Satisfaction Guarantee or Your First Session is Free.
           </p>
         </div>
       </div>
     </section>
 
-    <section id="contact" className="py-16 px-6 md:px-12 bg-white scroll-mt-20">
+    <section id="contact" className="py-24 px-6 md:px-12 bg-[#F1F5F9] scroll-mt-20">
       <div className="max-w-screen-xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           <div>
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#353535] mb-4 tracking-tight leading-tight text-center">Have Questions?<br/>Let's Connect</h2>
-            <div className="w-24 h-1 bg-amber-400 mb-6 mx-auto"></div>
-            <p className="text-[#808080] text-base md:text-lg mb-8 max-w-md mx-auto text-center leading-relaxed">
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-[#202020] mb-6 tracking-tight leading-tight text-center lg:text-left">
+              <span className="block">Have Questions?</span>
+              <span className="block italic font-normal text-gradient text-3xl md:text-4xl">Let's Connect</span>
+            </h2>
+            <p className="text-[#606060] text-base md:text-lg mb-12 max-w-md mx-auto lg:mx-0 text-center lg:text-left leading-relaxed">
               Our academic advisors are here to help you find the perfect tutor and build a roadmap for your success.
             </p>
-            <div className="space-y-6">
-              <div className="flex items-center gap-5">
-                <div className="w-14 h-14 rounded-2xl bg-slate-50 flex items-center justify-center shrink-0 border border-slate-100/50">
-                  <span className="material-symbols-outlined text-[#1e40af] text-2xl">mail</span>
+            <div className="space-y-8">
+              <div className="flex items-center gap-6">
+                <div className="w-16 h-16 rounded-2xl bg-white flex items-center justify-center shrink-0 border border-slate-200 shadow-sm">
+                  <span className="material-symbols-outlined text-edu-blue text-2xl">mail</span>
                 </div>
                 <div>
-                  <h4 className="font-bold text-[#353535] text-lg">Email Us</h4>
-                  <p className="text-[#808080] text-sm">contact@eduqra.com</p>
+                  <h4 className="font-bold text-[#202020] text-lg">Email Us</h4>
+                  <p className="text-[#606060] text-base font-medium">contact@eduqra.com</p>
                 </div>
               </div>
 
-              <div className="flex items-center gap-5">
-                <div className="w-14 h-14 rounded-2xl bg-slate-50 flex items-center justify-center shrink-0 border border-slate-100/50">
-                  <span className="material-symbols-outlined text-[#1e40af] text-2xl">location_on</span>
+              <div className="flex items-center gap-6">
+                <div className="w-16 h-16 rounded-2xl bg-white flex items-center justify-center shrink-0 border border-slate-200 shadow-sm">
+                  <span className="material-symbols-outlined text-edu-green text-2xl">location_on</span>
                 </div>
                 <div>
-                  <h4 className="font-bold text-[#353535] text-lg">Visit Us</h4>
-                  <p className="text-[#808080] text-sm leading-snug">
+                  <h4 className="font-bold text-[#202020] text-lg">Visit Us</h4>
+                  <p className="text-[#606060] text-base font-medium leading-snug">
                     Allwyn Colony, Road No 45, KPHB, Hyderabad
                   </p>
                 </div>
               </div>
 
-              <div className="flex items-center gap-5">
-                <div className="w-14 h-14 rounded-2xl bg-slate-50 flex items-center justify-center shrink-0 border border-slate-100/50">
-                  <span className="material-symbols-outlined text-[#1e40af] text-2xl">call</span>
+              <div className="flex items-center gap-6">
+                <div className="w-16 h-16 rounded-2xl bg-white flex items-center justify-center shrink-0 border border-slate-200 shadow-sm">
+                  <span className="material-symbols-outlined text-edu-teal text-2xl">call</span>
                 </div>
                 <div>
-                  <h4 className="font-bold text-[#353535] text-lg">Call Us</h4>
-                  <p className="text-[#808080] text-sm">+91 7337312325</p>
+                  <h4 className="font-bold text-[#202020] text-lg">Call Us</h4>
+                  <p className="text-[#606060] text-base font-medium">+91 7337312325</p>
                 </div>
               </div>
             </div>
           </div>
-          <div className="bg-[#f8faff] p-8 md:p-10 rounded-2xl border border-slate-100 shadow-sm">
-            <form className="space-y-5" onSubmit={(e) => { e.preventDefault(); alert('Message sent successfully!'); e.target.reset(); }}>
-              <div className="space-y-2">
-                <label className="text-xs font-bold text-[#353535] uppercase tracking-widest">Full Name</label>
-                <input 
-                  required 
-                  type="text" 
-                  placeholder="John Doe"
-                  className="w-full px-5 py-3.5 rounded-lg border border-slate-200 bg-white focus:ring-2 focus:ring-primary/20 outline-none transition-all text-[#353535] font-medium"
-                />
+          <div className="bg-white p-8 md:p-12 rounded-3xl shadow-2xl border border-slate-200">
+            <form className="space-y-6" onSubmit={(e) => { e.preventDefault(); alert('Message sent successfully!'); e.target.reset(); }}>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <label className="text-sm font-bold text-slate-700 ml-1">Full Name</label>
+                  <input 
+                    required 
+                    type="text" 
+                    placeholder="Enter your name"
+                    className="w-full px-5 py-4 rounded-xl border border-slate-200 bg-white focus:border-[#4F46E5] focus:ring-4 focus:ring-[#4F46E5]/5 outline-none transition-all text-slate-900 placeholder:text-slate-400"
+                  />
+                </div>
+                
+                <div className="space-y-2">
+                  <label className="text-sm font-bold text-slate-700 ml-1">Email Address</label>
+                  <input 
+                    required 
+                    type="email" 
+                    placeholder="name@company.com"
+                    className="w-full px-5 py-4 rounded-xl border border-slate-200 bg-white focus:border-[#4F46E5] focus:ring-4 focus:ring-[#4F46E5]/5 outline-none transition-all text-slate-900 placeholder:text-slate-400"
+                  />
+                </div>
               </div>
+
               <div className="space-y-2">
-                <label className="text-xs font-bold text-[#353535] uppercase tracking-widest">Email Address</label>
-                <input 
-                  required 
-                  type="email" 
-                  placeholder="john@example.com"
-                  className="w-full px-5 py-3.5 rounded-lg border border-slate-200 bg-white focus:ring-2 focus:ring-primary/20 outline-none transition-all text-[#353535] font-medium"
-                />
-              </div>
-              <div className="space-y-2">
-                <label className="text-xs font-bold text-[#353535] uppercase tracking-widest">Message</label>
+                <label className="text-sm font-bold text-slate-700 ml-1">How can we help you?</label>
                 <textarea 
                   required 
-                  rows="4" 
-                  placeholder="How can we help you?"
-                  className="w-full px-5 py-3.5 rounded-lg border border-slate-200 bg-white focus:ring-2 focus:ring-primary/20 outline-none transition-all text-[#353535] font-medium resize-none text-sm"
+                  rows="5" 
+                  placeholder="Describe your requirements or questions here..."
+                  className="w-full px-5 py-4 rounded-xl border border-slate-200 bg-white focus:border-[#4F46E5] focus:ring-4 focus:ring-[#4F46E5]/5 outline-none transition-all text-slate-900 placeholder:text-slate-400 resize-none"
                 ></textarea>
               </div>
-              <button 
-                type="submit"
-                className="w-full bg-[#1e40af] text-white py-4 rounded-lg font-bold text-lg hover:bg-[#1e3a8a] transition-all duration-300 shadow-md"
-              >
-                Send Message
-              </button>
+
+              <div className="pt-2">
+                <button 
+                  type="submit"
+                  className="w-full bg-[#4F46E5] text-white py-4 rounded-xl font-bold text-lg hover:bg-[#4338CA] active:transform active:scale-[0.98] transition-all duration-200 shadow-lg shadow-indigo-200 flex items-center justify-center gap-2"
+                >
+                  Send Message
+                  <span className="material-symbols-outlined text-xl">send</span>
+                </button>
+              </div>
+
+              <div className="flex items-center justify-center gap-2 pt-2">
+                <div className="w-1.5 h-1.5 rounded-full bg-emerald-500"></div>
+                <p className="text-xs font-medium text-slate-500">Typical response time: 2-4 hours</p>
+              </div>
             </form>
           </div>
         </div>

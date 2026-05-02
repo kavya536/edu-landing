@@ -3,15 +3,14 @@ import React from 'react';
 const Footer = ({ setView }) => (
   <footer className="bg-slate-50 border-t border-slate-200 pt-8 pb-4 px-6 md:px-12">
     <div className="max-w-screen-2xl mx-auto">
-      <div className="flex flex-col lg:flex-row justify-between items-start gap-12 pr-6 md:pr-12 lg:pr-64">
-        <div className="max-w-xs shrink-0">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+        {/* Company Info */}
+        <div className="max-w-xs">
           <div className="mb-1">
             <img src="/logo.png" alt="Eduqra" className="h-16 w-auto object-contain" loading="lazy" />
           </div>
           <p className="font-body leading-relaxed text-[13px] tracking-wide text-slate-700 font-medium mb-6">
-            Empowering students with elite-level tutoring.<br />
-            Bridging the gap between classroom learning.<br />
-            Achieving excellence in national exams.
+            Empowering students with elite-level tutoring. Bridging the gap between classroom learning. Achieving excellence in national exams.
           </p>
           <div className="flex gap-4">
             <a href="https://www.instagram.com/eduqra/?hl=en" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-all group">
@@ -23,28 +22,30 @@ const Footer = ({ setView }) => (
           </div>
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-12 lg:gap-40">
-          <div>
-            <h4 className="text-slate-900 font-black mb-6 text-xs tracking-widest uppercase whitespace-nowrap">Our Services</h4>
-            <ul className="space-y-4">
-              <li><a className="font-body text-xs tracking-wide text-slate-600 font-semibold hover:text-primary transition-all whitespace-nowrap" href="#expert-tutors">Our Tutors</a></li>
-              <li><a className="font-body text-xs tracking-wide text-slate-600 font-semibold hover:text-primary transition-all whitespace-nowrap" href="#how-it-works">How it Works</a></li>
-              <li><a className="font-body text-xs tracking-wide text-slate-600 font-semibold hover:text-primary transition-all whitespace-nowrap" href="#curriculum">Curriculum</a></li>
-              <li><a className="font-body text-xs tracking-wide text-slate-600 font-semibold hover:text-primary transition-all whitespace-nowrap" href="#testimonials">Success Stories</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="text-slate-900 font-black mb-6 text-xs tracking-widest uppercase whitespace-nowrap">Quick Links</h4>
-            <ul className="space-y-4">
-              <li><button onClick={() => setView('privacy')} className="font-body text-xs tracking-wide text-slate-600 font-semibold hover:text-primary transition-all whitespace-nowrap">Privacy Policy</button></li>
-              <li><button onClick={() => setView('terms')} className="font-body text-xs tracking-wide text-slate-600 font-semibold hover:text-primary transition-all whitespace-nowrap">Terms of Service</button></li>
-              <li><button onClick={() => setView('refund')} className="font-body text-xs tracking-wide text-slate-600 font-semibold hover:text-primary transition-all whitespace-nowrap">Refund Policy</button></li>
-              <li><a className="font-body text-xs tracking-wide text-slate-600 font-semibold hover:text-primary transition-all whitespace-nowrap" href="#contact">Contact Us</a></li>
-            </ul>
-          </div>
+        {/* Services */}
+        <div className="lg:pl-12">
+          <h4 className="text-slate-900 font-black mb-6 text-xs tracking-widest uppercase whitespace-nowrap">Our Services</h4>
+          <ul className="space-y-2">
+            <li><a className="font-body text-xs tracking-wide text-slate-600 font-semibold hover:text-primary transition-all whitespace-nowrap" href="#expert-tutors">Our Tutors</a></li>
+            <li><a className="font-body text-xs tracking-wide text-slate-600 font-semibold hover:text-primary transition-all whitespace-nowrap" href="#how-it-works">How it Works</a></li>
+            <li><a className="font-body text-xs tracking-wide text-slate-600 font-semibold hover:text-primary transition-all whitespace-nowrap" href="#curriculum">Curriculum</a></li>
+            <li><a className="font-body text-xs tracking-wide text-slate-600 font-semibold hover:text-primary transition-all whitespace-nowrap" href="#testimonials">Success Stories</a></li>
+          </ul>
         </div>
 
-        <div className="shrink-0">
+        {/* Quick Links */}
+        <div>
+          <h4 className="text-slate-900 font-black mb-6 text-xs tracking-widest uppercase whitespace-nowrap">Quick Links</h4>
+          <ul className="space-y-2">
+            <li><button onClick={() => setView('privacy')} className="font-body text-xs tracking-wide text-slate-600 font-semibold hover:text-primary transition-all whitespace-nowrap">Privacy Policy</button></li>
+            <li><button onClick={() => setView('terms')} className="font-body text-xs tracking-wide text-slate-600 font-semibold hover:text-primary transition-all whitespace-nowrap">Terms of Service</button></li>
+            <li><button onClick={() => setView('refund')} className="font-body text-xs tracking-wide text-slate-600 font-semibold hover:text-primary transition-all whitespace-nowrap">Refund Policy</button></li>
+            <li><a className="font-body text-xs tracking-wide text-slate-600 font-semibold hover:text-primary transition-all whitespace-nowrap" href="#contact">Contact Us</a></li>
+          </ul>
+        </div>
+
+        {/* Contact Us */}
+        <div>
           <h4 className="text-slate-900 font-black mb-6 text-xs tracking-widest uppercase whitespace-nowrap">Contact Us</h4>
           <ul className="space-y-4 text-xs tracking-wide text-slate-700 font-medium">
             <li className="flex items-center gap-3">
