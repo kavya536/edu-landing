@@ -48,7 +48,7 @@ const TutorExpertise = () => {
         <div className="flex flex-col lg:flex-row gap-20 items-center">
           
           {/* Left: Content and Grid */}
-          <div className="lg:w-3/5 order-2 lg:order-1">
+          <div className="lg:w-3/5">
             <header className={`mb-16 transition-all duration-1000 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
               <h2 className="text-3xl md:text-5xl tracking-tighter font-black text-[#202020] mb-6 leading-tight whitespace-nowrap">
                 Our Expert <span className="italic font-normal text-gradient font-serif pr-2">Tutors</span>
@@ -62,7 +62,7 @@ const TutorExpertise = () => {
               {expertise.map((item, idx) => (
                 <div 
                   key={idx} 
-                  className={`group p-8 rounded-[2rem] bg-slate-50 hover:bg-white hover:shadow-[0_40px_80px_-15px_rgba(0,0,0,0.08)] transition-all duration-1000 border border-transparent hover:border-slate-100 hover:-translate-y-2 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
+                  className={`group p-8 rounded-[2rem] bg-slate-50/50 hover:bg-white hover:shadow-[0_40px_80px_-15px_rgba(0,0,0,0.08)] transition-all duration-1000 border border-slate-100 shadow-sm hover:-translate-y-2 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
                   style={{ transitionDelay: `${idx * 150}ms` }}
                 >
                   <div className={`w-14 h-14 rounded-2xl ${item.accent} flex items-center justify-center mb-6 group-hover:scale-125 group-hover:rotate-6 transition-all duration-500`}>
@@ -80,7 +80,7 @@ const TutorExpertise = () => {
           </div>
 
           {/* Right: Premium Image Section */}
-          <div className={`lg:w-2/5 relative order-1 lg:order-2 group/img transition-all duration-[1200ms] transform ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
+          <div className={`lg:w-2/5 relative group/img transition-all duration-[1200ms] transform ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
             <div className="relative z-10 rounded-[3rem] overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.15)] border-[12px] border-white bg-slate-100 group-hover/img:shadow-[0_60px_120px_-30px_rgba(0,74,173,0.3)] transition-all duration-700 group-hover/img:-translate-y-3">
               <img 
                 src="/tutor-expert.png" 

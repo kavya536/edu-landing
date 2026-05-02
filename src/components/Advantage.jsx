@@ -47,13 +47,13 @@ const Advantage = () => {
         
         {/* Right Side: Unique Vertical Path UI */}
         <div className="relative">
-          <h2 className={`text-3xl md:text-5xl font-serif font-bold text-[#202020] mb-10 tracking-tight leading-tight transition-all duration-1000 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
+          <h2 className={`text-3xl md:text-5xl font-serif font-bold text-[#202020] mb-12 tracking-tight leading-tight text-center lg:text-left transition-all duration-1000 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
             The <span className="italic font-normal text-gradient">Eduqra Advantage</span>
           </h2>
           
-          <div className="relative pl-16 md:pl-24">
+          <div className="relative pl-14 md:pl-24 max-w-xl mx-auto lg:mx-0">
             {/* The Connecting Path Line */}
-            <div className={`absolute left-8 md:left-12 top-0 bottom-0 w-1 bg-gradient-to-b from-[#38B000] via-[#38B000]/40 to-transparent rounded-full shadow-[0_0_10px_rgba(56,176,0,0.2)] transition-all duration-[2000ms] ${isVisible ? 'opacity-100 scale-y-100' : 'opacity-0 scale-y-0'} origin-top`}></div>
+            <div className={`absolute left-7 md:left-12 top-0 bottom-0 w-1 bg-gradient-to-b from-[#38B000] via-[#38B000]/40 to-transparent rounded-full shadow-[0_0_10px_rgba(56,176,0,0.1)] transition-all duration-[2000ms] ${isVisible ? 'opacity-100 scale-y-100' : 'opacity-0 scale-y-0'} origin-top`}></div>
             
             <div className="space-y-12">
               {advantages.map((item, idx) => (
@@ -64,23 +64,23 @@ const Advantage = () => {
                   }`}
                   style={{ transitionDelay: `${idx * 250}ms` }}
                 >
-                  {/* The Path Node (Icon) */}
-                  <div className="absolute -left-16 md:-left-20 top-0 group">
-                    <div className="w-10 h-10 md:w-14 md:h-14 rounded-full bg-white border-4 border-[#38B000] shadow-lg flex items-center justify-center relative z-10 group-hover:scale-110 group-hover:rotate-[360deg] transition-all duration-700">
+                  {/* The Path Node (Icon) - Rounded Square Look */}
+                  <div className="absolute -left-14 md:-left-20 top-0 group">
+                    <div className="w-10 h-10 md:w-14 md:h-14 rounded-xl md:rounded-2xl bg-white border-[3px] md:border-4 border-[#38B000] shadow-lg flex items-center justify-center relative z-10 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
                       <span className="material-symbols-outlined text-[#38B000] text-lg md:text-2xl" style={{ fontVariationSettings: "'FILL' 0, 'wght' 600" }}>
                         {item.icon}
                       </span>
                     </div>
-                    {/* Restored pulsing animation */}
-                    <div className="absolute inset-0 rounded-full bg-[#38B000]/20 animate-ping"></div>
+                    {/* Subtle pulse */}
+                    <div className="absolute inset-0 rounded-xl md:rounded-2xl bg-[#38B000]/10 animate-ping opacity-30"></div>
                   </div>
                   
                   {/* Content Block */}
                   <div className="group cursor-default pl-4">
-                    <h4 className="font-bold text-[#202020] text-xl md:text-2xl mb-2 tracking-tight group-hover:text-[#38B000] transition-colors duration-300">
+                    <h4 className="font-bold text-[#202020] text-lg md:text-2xl mb-1 md:mb-2 tracking-tight group-hover:text-[#38B000] transition-colors duration-300">
                       {item.title}
                     </h4>
-                    <p className="text-[#606060] text-base md:text-lg leading-relaxed max-w-lg group-hover:text-[#353535] transition-colors">
+                    <p className="text-[#606060] text-sm md:text-lg leading-relaxed group-hover:text-[#353535] transition-colors">
                       {item.desc}
                     </p>
                   </div>

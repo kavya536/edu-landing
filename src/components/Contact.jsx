@@ -112,7 +112,7 @@ const Contact = ({ onViewPricing }) => (
               <div className="pt-2">
                 <button 
                   type="submit"
-                  className="w-full bg-[#4F46E5] text-white py-4 rounded-xl font-bold text-lg hover:bg-[#4338CA] active:transform active:scale-[0.98] transition-all duration-200 shadow-lg shadow-indigo-200 flex items-center justify-center gap-2"
+                  className="w-full bg-[#004AAD] text-white py-4 rounded-xl font-bold text-lg hover:brightness-110 active:transform active:scale-[0.98] transition-all duration-200 shadow-lg shadow-blue-200 flex items-center justify-center gap-2"
                 >
                   Send Message
                   <span className="material-symbols-outlined text-xl">send</span>
