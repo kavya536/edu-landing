@@ -62,16 +62,16 @@ const TutorExpertise = () => {
               {expertise.map((item, idx) => (
                 <div 
                   key={idx} 
-                  className={`group p-8 rounded-[2rem] bg-slate-50/50 hover:bg-white hover:shadow-[0_40px_80px_-15px_rgba(0,0,0,0.08)] transition-all duration-1000 border border-slate-100 shadow-sm hover:-translate-y-2 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
+                  className={`group p-8 rounded-[2.5rem] bg-white hover:shadow-[0_40px_80px_-15px_rgba(0,0,0,0.12)] transition-all duration-1000 border border-slate-200 shadow-sm hover:-translate-y-2 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
                   style={{ transitionDelay: `${idx * 150}ms` }}
                 >
-                  <div className={`w-14 h-14 rounded-2xl ${item.accent} flex items-center justify-center mb-6 group-hover:scale-125 group-hover:rotate-6 transition-all duration-500`}>
-                    <span className="material-symbols-outlined text-3xl font-bold">{item.icon}</span>
+                  <div className={`w-16 h-16 rounded-2xl ${item.accent} flex items-center justify-center mb-6 group-hover:scale-125 group-hover:rotate-6 transition-all duration-500 shadow-sm`}>
+                    <span className="material-symbols-outlined text-3xl font-black">{item.icon}</span>
                   </div>
-                  <h3 className="text-2xl font-black text-[#202020] mb-3 tracking-tight">
+                  <h3 className="text-2xl font-black text-[#151515] mb-3 tracking-tight">
                     {item.title}
                   </h3>
-                  <p className="text-[#606060] font-medium leading-relaxed">
+                  <p className="text-[#606060] font-bold text-sm md:text-base leading-relaxed">
                     {item.desc}
                   </p>
                 </div>

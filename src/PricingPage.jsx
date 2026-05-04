@@ -39,7 +39,7 @@ const PricingPage = ({ onBack }) => {
       {
         name: 'Standard',
         type: 'Scholar',
-        price: '9/-',
+        price: '599',
         period: 'every 3 months',
         description: 'Comprehensive support for multiple core subjects.',
         highlight: 'Most Popular',
@@ -98,7 +98,7 @@ const PricingPage = ({ onBack }) => {
       {
         name: 'Standard',
         type: 'Achiever',
-        price: '9/-',
+        price: '599',
         period: 'every 3 months',
         description: 'Enhanced learning for competitive edge.',
         highlight: 'Best Value',
@@ -161,7 +161,7 @@ const PricingPage = ({ onBack }) => {
       {
         name: 'Standard',
         type: 'Professional',
-        price: '9/-',
+        price: '599',
         period: 'every 3 months',
         description: 'Advanced curriculum for degree tracks.',
         highlight: 'Recommended',
@@ -216,8 +216,9 @@ const PricingPage = ({ onBack }) => {
 
     setIsProcessing(true);
     try {
-      // 1. Create Order on Backend (using the same backend at localhost:5001)
-      const orderResponse = await fetch('http://localhost:5001/api/create-razorpay-order', {
+      // 1. Create Order on Backend
+      const backendBaseUrl = import.meta.env.VITE_BACKEND_URL || 'http://localhost:5001';
+      const orderResponse = await fetch(`${backendBaseUrl}/api/create-razorpay-order`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 
