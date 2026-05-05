@@ -4,11 +4,11 @@ import { Star, Users, CheckCircle } from 'lucide-react';
 const Hero = () => {
   return (
     <section 
-      className="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-32 bg-gradient-to-r from-white via-white to-[#c8f2de]" 
+      className="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-32 bg-gradient-to-r from-[#f4f9ff] via-white to-[#dcf0ff]" 
       id="hero"
     >
       {/* Abstract Backgrounds */}
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-emerald-100/50 to-transparent -z-10"></div>
+      <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#004AAD]/10 to-transparent -z-10"></div>
       <div className="absolute -bottom-20 -left-20 w-[600px] h-[600px] bg-[#004AAD]/5 rounded-full blur-[120px] -z-10 animate-pulse" style={{ animationDuration: '10s' }}></div>
       <div className="absolute inset-0 dot-pattern opacity-30 -z-10"></div>
 
