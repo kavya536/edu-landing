@@ -73,16 +73,16 @@ const Hero = () => {
           </div>
 
           {/* Left Large Image */}
-          <div className="relative w-7/12 h-full flex flex-col justify-end rounded-3xl md:rounded-[2.5rem] overflow-hidden shadow-2xl group border-4 border-white">
+          <div className="relative w-7/12 h-full flex flex-col justify-end rounded-3xl md:rounded-[2.5rem] overflow-hidden shadow-2xl group animate-float">
             <img 
               src="/tutor img.jpeg" 
               alt="Tutor" 
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
             />
             {/* Overlay card for tutor name */}
-            <div className="relative z-10 m-4 md:m-6 bg-white p-3 md:p-4 rounded-xl md:rounded-2xl shadow-lg w-max mb-[80px] md:mb-[100px] animate-float">
+            <div className="relative z-10 m-4 md:m-6 bg-white p-3 md:p-4 rounded-xl md:rounded-2xl shadow-lg w-max mb-[80px] md:mb-[100px] animate-float" style={{ animationDelay: '0.5s' }}>
                <p className="text-[9px] md:text-[10px] font-bold text-[#38B000] uppercase tracking-widest mb-0.5 md:mb-1">Expert Tutor</p>
-               <p className="text-xs md:text-sm font-black text-slate-800">Sarah Johnson</p>
+               <p className="text-xs md:text-sm font-black text-slate-800">Mr. James Carter</p>
             </div>
             
             {/* Stats Black Card */}
@@ -108,10 +108,10 @@ const Hero = () => {
 
           {/* Right Stacked Images */}
           <div className="w-5/12 flex flex-col gap-3 md:gap-5 h-full relative">
-            <div className="flex-1 rounded-3xl md:rounded-[2.5rem] overflow-hidden shadow-2xl group border-4 border-white">
+            <div className="flex-1 rounded-3xl md:rounded-[2.5rem] overflow-hidden shadow-2xl group animate-float" style={{ animationDelay: '1s' }}>
                <img src="/b-techstud.jpeg" alt="B-Tech Student" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
             </div>
-            <div className="flex-1 rounded-3xl md:rounded-[2.5rem] overflow-hidden shadow-2xl group border-4 border-white relative">
+            <div className="flex-1 rounded-3xl md:rounded-[2.5rem] overflow-hidden shadow-2xl group relative animate-float" style={{ animationDelay: '2s' }}>
                <img src="/scholstud.jpeg" alt="School Student" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
             </div>
           </div>
