@@ -77,7 +77,7 @@ const Hero = () => {
             <img 
               src="/tutor img.jpeg" 
               alt="Tutor" 
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+              className="absolute inset-0 w-full h-full object-cover"
             />
             {/* Overlay card for tutor name */}
             <div className="relative z-10 m-4 md:m-6 bg-white p-3 md:p-4 rounded-xl md:rounded-2xl shadow-lg w-max mb-[80px] md:mb-[100px] animate-float" style={{ animationDelay: '0.5s' }}>
@@ -108,11 +108,11 @@ const Hero = () => {
 
           {/* Right Stacked Images */}
           <div className="w-5/12 flex flex-col gap-3 md:gap-5 h-full relative">
-            <div className="flex-1 rounded-3xl md:rounded-[2.5rem] overflow-hidden shadow-2xl group animate-float" style={{ animationDelay: '1s' }}>
-               <img src="/b-techstud.jpeg" alt="B-Tech Student" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
+            <div className="flex-1 rounded-3xl md:rounded-[2.5rem] overflow-hidden shadow-2xl group animate-float">
+               <img src="/b-techstud.jpeg" alt="B-Tech Student" className="w-full h-full object-cover" />
             </div>
-            <div className="flex-1 rounded-3xl md:rounded-[2.5rem] overflow-hidden shadow-2xl group relative animate-float" style={{ animationDelay: '2s' }}>
-               <img src="/scholstud.jpeg" alt="School Student" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
+            <div className="flex-1 rounded-3xl md:rounded-[2.5rem] overflow-hidden shadow-2xl group relative animate-float">
+               <img src="/scholstud.jpeg" alt="School Student" className="w-full h-full object-cover" />
             </div>
           </div>
 
