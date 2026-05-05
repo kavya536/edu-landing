@@ -210,7 +210,7 @@ const PricingPage = ({ onBack }) => {
   const handlePayment = async (plan) => {
     if (plan.price === '0') {
       // Free plan: redirect to registration directly
-      window.location.href = `${import.meta.env.VITE_STUDENT_HUB_URL}/register?plan=${plan.tier}`;
+      window.location.href = `${import.meta.env.VITE_STUDENT_HUB_URL}/register?plan=${plan.name.toLowerCase()}`;
       return;
     }
 
