@@ -280,71 +280,72 @@ const PricingPage = ({ onBack }) => {
       <main className="max-w-screen-xl mx-auto px-6 py-24 md:py-32">
         {/* Header Section */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-6xl font-serif font-bold text-slate-900 mb-4 transition-all">Explore plans</h1>
-          <p className="text-lg text-slate-500 max-w-2xl mx-auto mb-10 leading-relaxed">
+          <h1 className="text-6xl md:text-7xl font-serif font-bold text-slate-900 mb-4 transition-all">Explore plans</h1>
+          <p className="text-lg md:text-xl text-slate-500 max-w-2xl mx-auto mb-10 leading-relaxed">
             Choose the perfect learning journey tailored to your academic needs and goals.
           </p>
 
           {/* Category Toggle */}
-          <div className="grid grid-cols-3 p-1 bg-slate-100 rounded-2xl shadow-inner mb-12 max-w-2xl mx-auto w-full">
-            {categories.map((cat) => (
-              <button
-                key={cat.id}
-                onClick={() => setActiveCategory(cat.id)}
-                className={`px-1 md:px-6 py-2.5 md:py-3 rounded-xl text-[10px] sm:text-xs md:text-sm tracking-tight transition-all duration-300 ${
-                  activeCategory === cat.id 
-                    ? 'bg-white text-primary shadow-sm scale-100 font-bold' 
-                    : 'text-slate-500 hover:text-slate-700 hover:bg-slate-50/50 font-normal'
-                }`}
-              >
-                {cat.label.split(' ')[0]}
-                <span className="hidden sm:inline"> {cat.label.split(' ').slice(1).join(' ')}</span>
-              </button>
-            ))}
+          <div className="flex justify-center mb-16">
+            <div className="inline-flex items-center p-1.5 bg-[#F8F9FA] rounded-[1.25rem] shadow-sm border border-slate-200">
+              {categories.map((cat) => (
+                <button
+                  key={cat.id}
+                  onClick={() => setActiveCategory(cat.id)}
+                  className={`px-6 md:px-8 py-3 rounded-[1rem] text-[10px] sm:text-[11px] tracking-[0.05em] uppercase transition-all duration-300 ${
+                    activeCategory === cat.id 
+                      ? 'border-[2.5px] border-[#0B1221] bg-white text-[#0B1221] font-black shadow-sm' 
+                      : 'border-[2.5px] border-transparent text-slate-400 font-bold hover:text-slate-600'
+                  }`}
+                >
+                  {cat.label}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
 
         {/* Pricing Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch mb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch mb-24 max-w-6xl mx-auto">
           {currentPlans.map((plan, index) => (
             <div 
               key={index}
-              className={`relative flex flex-col bg-white rounded-[2.5rem] p-10 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 border ${
-                plan.highlight ? 'border-edu-blue/20 shadow-xl' : 'border-slate-100'
+              className={`relative flex flex-col bg-white rounded-[2.5rem] p-10 transition-all duration-500 hover:-translate-y-2 border-[2.5px] ${
+                plan.highlight ? 'border-[#E5EEFF] shadow-[0_20px_60px_-15px_rgba(79,125,243,0.15)] scale-[1.02] z-10' : 'border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)]'
               }`}
             >
               {plan.highlight && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-edu-green text-white text-[10px] font-black uppercase tracking-[0.2em] px-6 py-2 rounded-full shadow-lg">
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#00D65B] text-white text-[10px] font-black uppercase tracking-[0.15em] px-6 py-2 rounded-full shadow-lg z-20">
                   {plan.highlight}
                 </div>
               )}
 
-              <div className="mb-10">
-                <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-8 shadow-sm ${
-                  plan.color === 'indigo' ? 'bg-edu-blue text-white' : 
-                  plan.color === 'blue' ? 'bg-edu-teal text-white' : 'bg-slate-50 text-slate-400'
+              <div className="mb-8 border-b border-slate-100 pb-8">
+                <div className={`w-14 h-14 rounded-[1.25rem] flex items-center justify-center mb-6 shadow-sm ${
+                  plan.color === 'indigo' ? 'bg-[#7C5CFF] text-white' : 
+                  plan.color === 'blue' ? 'bg-[#4F7DF3] text-white' : 'bg-[#0B1221] text-white'
                 }`}>
-                  {plan.name === 'Premium' ? <Crown className="w-8 h-8" /> : 
-                   plan.name === 'Standard' ? <Star className="w-8 h-8" /> : <Shield className="w-8 h-8" />}
+                  {plan.name === 'Premium' ? <Crown className="w-7 h-7" /> : 
+                   plan.name === 'Standard' ? <Star className="w-7 h-7" /> : <Shield className="w-7 h-7" />}
                 </div>
-                <h3 className="text-3xl font-serif font-bold text-[#202020] mb-2">{plan.name}</h3>
-                <p className="text-xs font-black text-slate-400 uppercase tracking-widest mb-8">{plan.type}</p>
-                <div className="flex items-baseline gap-2">
-                  <span className="text-5xl font-bold text-[#202020]">₹{plan.price}</span>
-                  <span className="text-slate-400 text-sm font-medium">{plan.period}</span>
+                <h3 className="text-2xl font-black text-[#0B1221] uppercase tracking-wide mb-1">{plan.name}</h3>
+                <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-6">{plan.type}</p>
+                <div className="flex items-baseline gap-1.5">
+                  <span className="text-6xl md:text-[120px] leading-none font-black text-[#0B1221] tracking-tight -ml-2">₹{plan.price}</span>
+                  <span className="text-sm font-bold text-slate-400 ml-2">{plan.period}</span>
                 </div>
-                <p className="mt-6 text-slate-500 text-sm leading-relaxed font-medium">{plan.description}</p>
+                <p className="mt-5 text-slate-500 text-[13px] leading-relaxed font-medium">{plan.description}</p>
               </div>
 
-              <div className="flex-1 space-y-5 mb-10">
+              <div className="flex-1 space-y-4 mb-10">
                 {plan.features.map((feature, fIndex) => (
                   <div key={fIndex} className="flex items-start gap-4">
                     {feature.included ? (
-                      <Check className={`w-5 h-5 shrink-0 mt-0.5 ${plan.color === 'indigo' ? 'text-edu-blue' : plan.color === 'blue' ? 'text-edu-teal' : 'text-edu-green'}`} />
+                      <Check className="w-[18px] h-[18px] shrink-0 mt-0.5 text-[#00D65B]" strokeWidth={3} />
                     ) : (
-                      <X className="w-5 h-5 text-slate-300 shrink-0 mt-0.5" />
+                      <X className="w-[18px] h-[18px] text-slate-200 shrink-0 mt-0.5" strokeWidth={3} />
                     )}
-                    <span className={`text-sm font-medium ${feature.included ? 'text-slate-700' : 'text-slate-400'}`}>
+                    <span className={`text-[13px] font-bold ${feature.included ? 'text-[#334155]' : 'text-slate-300'}`}>
                       {feature.text}
                     </span>
                   </div>
@@ -354,10 +355,10 @@ const PricingPage = ({ onBack }) => {
               <button 
                 onClick={() => handlePayment(plan)}
                 disabled={isProcessing}
-                className={`w-full py-5 rounded-2xl font-bold text-base transition-all duration-300 shadow-xl ${
+                className={`w-full py-4 rounded-xl font-black text-[14px] transition-all duration-300 shadow-md ${
                 plan.highlight 
-                  ? 'bg-edu-blue text-white hover:bg-primary/90 shadow-edu-blue/20' 
-                  : 'bg-slate-900 text-white hover:bg-black shadow-slate-200'
+                  ? 'bg-gradient-to-r from-[#4F7DF3] to-[#42b0ff] text-white hover:shadow-lg hover:shadow-blue-500/25 hover:opacity-95' 
+                  : 'bg-[#0B1221] text-white hover:bg-black'
               } ${isProcessing ? 'opacity-50 cursor-not-allowed' : ''}`}>
                 {isProcessing ? 'Processing...' : plan.buttonText}
               </button>
@@ -368,7 +369,7 @@ const PricingPage = ({ onBack }) => {
         {/* FAQ Section */}
         <div className="pt-32 border-t border-slate-200">
            <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-serif font-bold text-slate-900 mb-4">Frequently asked questions</h2>
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-slate-900 mb-4">Frequently asked questions</h2>
           </div>
           <div className="max-w-3xl mx-auto space-y-6">
             {[

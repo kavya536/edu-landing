@@ -4,7 +4,7 @@ import { Star, Users, CheckCircle } from 'lucide-react';
 const Hero = () => {
   return (
     <section 
-      className="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-32 bg-gradient-to-r from-[#f8fbff] via-[#e6f3ff] to-[#b3dbff]" 
+      className="relative overflow-hidden pt-20 pb-10 md:pt-28 md:pb-16 bg-gradient-to-r from-[#f8fbff] via-[#e6f3ff] to-[#b3dbff]" 
       id="hero"
     >
       {/* Abstract Backgrounds */}
@@ -31,9 +31,9 @@ const Hero = () => {
             </div>
           </div>
 
-          <h1 className="text-5xl md:text-6xl xl:text-7xl font-bold text-[#000000] tracking-tight leading-[1.1] mb-6">
+          <h1 className="text-6xl md:text-7xl font-bold text-[#000000] tracking-tight leading-[1.1] mb-6">
             Bridging the Gap
-            <span className="block mt-2 italic font-medium text-gradient">Between You & Success</span>
+            <span className="block mt-2 italic font-medium text-gradient pr-2">Between You & Success</span>
           </h1>
 
           <p className="text-lg md:text-xl text-slate-500 max-w-xl font-medium leading-relaxed mb-10">
@@ -59,10 +59,10 @@ const Hero = () => {
         </div>
 
         {/* Right Side: 3-Image Grid Layout */}
-        <div className="relative w-full h-[500px] md:h-[600px] flex gap-3 md:gap-5 animate-fade-in-up [animation-delay:200ms] mt-10 lg:mt-0">
+        <div className="relative w-full h-[400px] md:h-[500px] flex gap-3 md:gap-5 animate-fade-in-up [animation-delay:200ms] mt-6 lg:mt-0">
           
           {/* Top Right Floating Badge (Overlapping columns) */}
-          <div className="absolute -top-6 right-10 md:right-20 z-30 bg-white px-4 md:px-5 py-2.5 md:py-3 rounded-2xl shadow-xl flex items-center gap-3 animate-float border border-slate-50" style={{ animationDelay: '1s' }}>
+          <div className="absolute -top-6 right-10 md:right-20 z-30 bg-white px-4 md:px-5 py-2.5 md:py-3 rounded-2xl shadow-xl flex items-center gap-3 animate-float border border-slate-50">
             <div className="bg-emerald-50 p-1.5 rounded-lg shrink-0">
               <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-emerald-500" />
             </div>
@@ -77,10 +77,10 @@ const Hero = () => {
             <img 
               src="/tutor img.jpeg" 
               alt="Tutor" 
-              className="absolute inset-0 w-full h-full object-cover"
+              className="absolute inset-0 w-full h-full object-cover object-center"
             />
             {/* Overlay card for tutor name */}
-            <div className="relative z-10 m-4 md:m-6 bg-white p-3 md:p-4 rounded-xl md:rounded-2xl shadow-lg w-max mb-[80px] md:mb-[100px] animate-float" style={{ animationDelay: '0.5s' }}>
+            <div className="relative z-10 m-4 md:m-6 bg-white p-3 md:p-4 rounded-xl md:rounded-2xl shadow-lg w-max mb-2 md:mb-4 border border-slate-50 shadow-xl">
                <p className="text-[9px] md:text-[10px] font-bold text-[#38B000] uppercase tracking-widest mb-0.5 md:mb-1">Expert Tutor</p>
                <p className="text-xs md:text-sm font-black text-slate-800">Mr. James Carter</p>
             </div>
@@ -89,19 +89,19 @@ const Hero = () => {
             <div className="absolute bottom-4 left-4 right-4 md:bottom-6 md:left-6 md:right-6 z-20 bg-[#0B0F19] p-3 md:p-5 rounded-2xl md:rounded-3xl shadow-2xl flex items-center justify-between text-white">
               <div className="text-center">
                 <p className="text-sm md:text-xl font-black">150+</p>
-                <p className="text-[7px] md:text-[8px] font-bold text-slate-400 uppercase tracking-widest mt-0.5 md:mt-1">Specialists</p>
+                <p className="text-[7px] md:text-[8px] font-bold text-slate-400 uppercase tracking-widest mt-0.5 md:mt-1">Expert Tutors</p>
               </div>
               <div className="w-px h-6 md:h-8 bg-white/20"></div>
               <div className="text-center">
-                <p className="text-sm md:text-xl font-black">24/7</p>
-                <p className="text-[7px] md:text-[8px] font-bold text-slate-400 uppercase tracking-widest mt-0.5 md:mt-1">Availability</p>
+                <p className="text-sm md:text-xl font-black">1-on-1</p>
+                <p className="text-[7px] md:text-[8px] font-bold text-slate-400 uppercase tracking-widest mt-0.5 md:mt-1">Live Classes</p>
               </div>
               <div className="w-px h-6 md:h-8 bg-white/20"></div>
               <div className="text-center flex flex-col items-center">
                 <div className="flex items-center gap-0.5 md:gap-1 text-sm md:text-xl font-black">
                   <Star className="w-3 h-3 md:w-4 md:h-4 text-[#38B000] fill-[#38B000]" /> 4.9
                 </div>
-                <p className="text-[7px] md:text-[8px] font-bold text-slate-400 uppercase tracking-widest mt-0.5 md:mt-1">Rating</p>
+                <p className="text-[7px] md:text-[8px] font-bold text-slate-400 uppercase tracking-widest mt-0.5 md:mt-1">Student Rating</p>
               </div>
             </div>
           </div>

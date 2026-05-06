@@ -7,8 +7,8 @@ const Contact = ({ onViewPricing }) => (
       <div className="max-w-4xl mx-auto text-center editorial-gradient p-12 rounded-3xl relative overflow-hidden shadow-2xl shadow-edu-blue/40">
         <div className="absolute top-0 left-0 w-full h-full bg-white/5 opacity-10"></div>
         <div className="relative z-10">
-          <h2 className="text-3xl md:text-6xl font-serif font-bold text-white mb-6 tracking-tight">Start Your Journey Today</h2>
-          <p className="text-white/90 text-xl mb-12 max-w-xl mx-auto leading-relaxed">
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mb-6 tracking-tight">Start Your Journey Today</h2>
+          <p className="text-white/90 text-lg md:text-xl mb-12 max-w-xl mx-auto leading-relaxed">
             Join an elite circle of scholars and redefine what you thought was possible in your academic pursuit.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-6">
@@ -34,11 +34,11 @@ const Contact = ({ onViewPricing }) => (
       <div className="max-w-screen-xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           <div>
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-[#202020] mb-6 tracking-tight leading-tight text-center lg:text-left">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#202020] mb-6 tracking-tight leading-tight text-center lg:text-left">
               <span className="block">Have Questions?</span>
-              <span className="block italic font-normal text-gradient text-3xl md:text-4xl">Let's Connect</span>
+              <span className="block italic font-normal text-gradient pr-2">Let's Connect</span>
             </h2>
-            <p className="text-[#606060] text-base md:text-lg mb-12 max-w-md mx-auto lg:mx-0 text-center lg:text-left leading-relaxed">
+            <p className="text-[#606060] text-lg md:text-xl mb-12 max-w-md mx-auto lg:mx-0 text-center lg:text-left leading-relaxed">
               Our academic advisors are here to help you find the perfect tutor and build a roadmap for your success.
             </p>
             <div className="space-y-8">

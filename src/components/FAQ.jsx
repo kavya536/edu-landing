@@ -29,10 +29,10 @@ const FAQ = () => {
     <section ref={sectionRef} className="pt-16 pb-20 px-6 md:px-12 bg-[#F8F9FA] scroll-mt-20" id="faq">
       <div className="max-w-4xl mx-auto">
         <div className={`text-center mb-16 transition-all duration-1000 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-[#202020] mb-2 leading-tight">
-            Common <span className="italic font-normal text-gradient">Questions</span>
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#202020] mb-2 leading-tight">
+            Common <span className="italic font-normal text-gradient pr-2">Questions</span>
           </h2>
-          <p className="text-[#808080]">Everything you need to know about starting with Eduqra.</p>
+          <p className="text-[#808080] text-lg md:text-xl">Everything you need to know about starting with Eduqra.</p>
         </div>
         <div className="space-y-4">
           {faqs.map((faq, i) => (

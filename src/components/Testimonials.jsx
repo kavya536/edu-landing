@@ -28,8 +28,8 @@ const Testimonials = () => {
             </div>
           </div>
           <div className="w-full md:w-7/12 text-left">
-            <h2 className={`text-4xl md:text-5xl font-serif font-bold text-[#202020] mb-8 leading-tight transition-all duration-1000 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
-              Success <span className="italic font-normal text-gradient">Stories</span>
+            <h2 className={`text-3xl md:text-4xl font-serif font-bold text-[#202020] mb-8 leading-tight transition-all duration-1000 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
+              Success <span className="italic font-normal text-gradient pr-2">Stories</span>
             </h2>
             <div className="space-y-10">
               <div className={`transition-all duration-1000 delay-300 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>

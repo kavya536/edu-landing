@@ -51,10 +51,10 @@ const Curriculum = () => {
     <section ref={sectionRef} className="py-16 bg-[#F8F9FA] scroll-mt-24 overflow-hidden" id="curriculum">
       <div className="max-w-screen-2xl mx-auto px-6 md:px-12">
         <div className={`text-center mb-12 transition-all duration-1000 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
-          <h2 className="text-4xl md:text-6xl font-serif font-bold text-[#202020] mb-2 leading-tight">
-            Specialized <span className="italic font-normal text-gradient">Curriculum</span>
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#202020] mb-2 leading-tight">
+            Specialized <span className="italic font-normal text-gradient pr-2">Curriculum</span>
           </h2>
-          <p className="text-[#606060] max-w-2xl text-lg mx-auto">
+          <p className="text-[#606060] max-w-2xl text-lg md:text-xl mx-auto">
             Deep academic mastery through a curriculum designed for the modern learner.
           </p>
         </div>

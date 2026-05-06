@@ -18,8 +18,8 @@ const Features = () => {
   return (
     <section ref={sectionRef} className="py-20 px-6 md:px-12 bg-[#F0F7FF]">
       <div className={`max-w-screen-2xl mx-auto text-center mb-16 transition-all duration-1000 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
-        <h2 className="text-3xl md:text-5xl font-serif font-bold text-[#202020] mb-4 leading-tight">
-          Master Every <span className="italic font-normal text-gradient">Subject</span>
+        <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#202020] mb-4 leading-tight">
+          Master Every <span className="italic font-normal text-gradient pr-2">Subject</span>
         </h2>
       </div>
       <div className="max-w-screen-2xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
