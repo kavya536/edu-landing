@@ -330,9 +330,16 @@ const PricingPage = ({ onBack }) => {
                 </div>
                 <h3 className="text-2xl font-black text-[#0B1221] uppercase tracking-wide mb-1">{plan.name}</h3>
                 <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-6">{plan.type}</p>
-                <div className="flex items-baseline gap-1.5">
-                  <span className="text-6xl md:text-[120px] leading-none font-black text-[#0B1221] tracking-tight -ml-2">₹{plan.price}</span>
-                  <span className="text-sm font-bold text-slate-400 ml-2">{plan.period}</span>
+                <div className="flex flex-col">
+                  <div className="flex items-baseline gap-1">
+                    <span className="text-3xl md:text-4xl font-black text-[#0B1221] tracking-tight">₹</span>
+                    <span className="text-6xl md:text-8xl font-black text-[#0B1221] tracking-tighter leading-none -ml-1">
+                      {plan.price}
+                    </span>
+                  </div>
+                  <span className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] mt-2">
+                    {plan.period}
+                  </span>
                 </div>
                 <p className="mt-5 text-slate-500 text-[13px] leading-relaxed font-medium">{plan.description}</p>
               </div>
