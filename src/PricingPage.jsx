@@ -204,7 +204,7 @@ const PricingPage = ({ onBack }) => {
     ]
   };
 
-  const [isProcessing, setIsProcessing] = useState(false);
+  const [processingPlan, setProcessingPlan] = useState(null);
   const [openFaqIndex, setOpenFaqIndex] = useState(null);
 
   const handlePayment = async (plan) => {
@@ -214,7 +214,7 @@ const PricingPage = ({ onBack }) => {
       return;
     }
 
-    setIsProcessing(true);
+    setProcessingPlan(plan.name);
     try {
       // 1. Create Order on Backend
       const backendBaseUrl = import.meta.env.VITE_BACKEND_URL || 'http://localhost:5001';
@@ -246,7 +246,7 @@ const PricingPage = ({ onBack }) => {
         },
         theme: { color: "#000000" },
         modal: {
-          ondismiss: function() { setIsProcessing(false); }
+          ondismiss: function() { setProcessingPlan(null); }
         }
       };
 
@@ -256,7 +256,7 @@ const PricingPage = ({ onBack }) => {
     } catch (err) {
       console.error('❌ Payment Error:', err);
       alert("Payment failed to initialize: " + err.message);
-      setIsProcessing(false);
+      setProcessingPlan(null);
     }
   };
 
@@ -361,13 +361,13 @@ const PricingPage = ({ onBack }) => {
 
               <button 
                 onClick={() => handlePayment(plan)}
-                disabled={isProcessing}
+                disabled={!!processingPlan}
                 className={`w-full py-4 rounded-xl font-black text-[14px] transition-all duration-300 shadow-md ${
                 plan.highlight 
                   ? 'bg-gradient-to-r from-[#4F7DF3] to-[#42b0ff] text-white hover:shadow-lg hover:shadow-blue-500/25 hover:opacity-95' 
                   : 'bg-[#0B1221] text-white hover:bg-black'
-              } ${isProcessing ? 'opacity-50 cursor-not-allowed' : ''}`}>
-                {isProcessing ? 'Processing...' : plan.buttonText}
+              } ${processingPlan ? 'opacity-50 cursor-not-allowed' : ''}`}>
+                {processingPlan === plan.name ? 'Processing...' : plan.buttonText}
               </button>
             </div>
           ))}
