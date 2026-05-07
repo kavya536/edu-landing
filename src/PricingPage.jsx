@@ -11,9 +11,9 @@ const PricingPage = ({ onBack }) => {
   }, []);
 
   const categories = [
-    { id: 'schools', label: 'Schools (K-10)', activeStyle: 'bg-blue-50 text-blue-700 border-blue-200' },
-    { id: 'intermediate', label: 'Intermediate (11-12)', activeStyle: 'bg-pink-50 text-pink-700 border-pink-200' },
-    { id: 'graduates', label: 'Graduates & Colleges', activeStyle: 'bg-yellow-50 text-yellow-700 border-yellow-200' }
+    { id: 'schools', label: 'Schools (K-10)', activeStyle: 'bg-blue-400 text-white border-blue-400' },
+    { id: 'intermediate', label: 'Intermediate (11-12)', activeStyle: 'bg-pink-400 text-white border-pink-400' },
+    { id: 'graduates', label: 'Graduates & Colleges', activeStyle: 'bg-yellow-500 text-white border-yellow-500' }
   ];
 
   const plans = {
