@@ -279,7 +279,7 @@ const PricingPage = ({ onBack }) => {
       <main className="max-w-screen-xl mx-auto px-6 pt-12 pb-24 md:pt-16 md:pb-32">
         {/* Header Section */}
         <div className="text-center mb-10">
-          <h1 className="text-[32px] md:text-[52px] font-serif font-bold text-slate-900 mb-4 transition-all">
+          <h1 className="text-[28px] md:text-[32px] font-serif font-bold text-slate-900 mb-4 transition-all">
             Explore <span className="italic font-normal text-gradient pr-2">Plans</span>
           </h1>
           <p className="text-[18px] text-slate-600 max-w-2xl mx-auto mb-10 leading-[1.6]">
@@ -329,20 +329,20 @@ const PricingPage = ({ onBack }) => {
                   {plan.name === 'Premium' ? <Crown className="w-7 h-7" /> : 
                    plan.name === 'Standard' ? <Star className="w-7 h-7" /> : <Shield className="w-7 h-7" />}
                 </div>
-                <h3 className="text-[20px] font-black text-[#0B1221] uppercase tracking-wide mb-1">{plan.name}</h3>
+                <h3 className="text-[20px] font-bold text-[#0B1221] uppercase tracking-wide mb-1">{plan.name}</h3>
                 <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-4">{plan.type}</p>
                 <div className="flex flex-col">
                   <div className="flex items-baseline gap-0">
-                    <span className="text-[24px] font-extrabold text-[#0B1221] tracking-tighter">₹</span>
-                    <span className="text-[48px] font-extrabold text-[#0B1221] tracking-tighter leading-none">
+                    <span className="text-[20px] font-bold text-[#0B1221] tracking-tighter">₹</span>
+                    <span className="text-[40px] font-bold text-[#0B1221] tracking-tighter leading-none">
                       {plan.price}
                     </span>
                   </div>
-                  <span className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] mt-2">
+                  <span className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] mt-1">
                     {plan.period}
                   </span>
                 </div>
-                <p className="mt-3 text-slate-600 text-[13px] leading-relaxed font-medium">{plan.description}</p>
+                <p className="mt-4 text-slate-600 text-[14px] leading-relaxed font-medium">{plan.description}</p>
               </div>
 
               <div className="flex-1 space-y-4 mb-10">
