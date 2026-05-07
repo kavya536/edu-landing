@@ -11,9 +11,9 @@ const PricingPage = ({ onBack }) => {
   }, []);
 
   const categories = [
-    { id: 'schools', label: 'Schools (K-10)', activeStyle: 'bg-[#0B1221] text-white border-[#0B1221]' },
-    { id: 'intermediate', label: 'Intermediate (11-12)', activeStyle: 'bg-[#4F46E5] text-white border-[#4F46E5]' },
-    { id: 'graduates', label: 'Graduates & Colleges', activeStyle: 'bg-[#334155] text-white border-[#334155]' }
+    { id: 'schools', label: 'Schools (K-10)', activeStyle: 'bg-blue-50 text-blue-700 border-blue-200' },
+    { id: 'intermediate', label: 'Intermediate (11-12)', activeStyle: 'bg-pink-50 text-pink-700 border-pink-200' },
+    { id: 'graduates', label: 'Graduates & Colleges', activeStyle: 'bg-yellow-50 text-yellow-700 border-yellow-200' }
   ];
 
   const plans = {
@@ -342,7 +342,7 @@ const PricingPage = ({ onBack }) => {
                     {plan.period}
                   </span>
                 </div>
-                <p className="mt-3 text-slate-500 text-[13px] leading-relaxed font-medium">{plan.description}</p>
+                <p className="mt-3 text-slate-600 text-[13px] leading-relaxed font-medium">{plan.description}</p>
               </div>
 
               <div className="flex-1 space-y-4 mb-10">
