@@ -21,7 +21,7 @@ const Masterclass = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 items-start">
           {/* Sticky Heading */}
           <div className={`lg:col-span-5 lg:sticky lg:top-24 text-center transition-all duration-1000 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#202020] leading-tight mb-4">
+            <h2 className="text-[28px] md:text-[32px] font-serif font-bold text-[#202020] leading-tight mb-4">
               A Masterclass in <span className="italic font-normal text-gradient pr-2">Your Own Progress.</span>
             </h2>
           </div>
@@ -42,8 +42,8 @@ const Masterclass = () => {
                   <span className="text-[120px] font-serif text-slate-200 leading-none block">{item.num}</span>
                 </div>
                 <div className="pt-2 md:pt-6">
-                  <h3 className="text-xl md:text-2xl font-serif font-bold text-[#353535] mb-2">{item.title}</h3>
-                  <p className="text-lg md:text-xl text-[#808080] leading-relaxed max-w-lg">{item.desc}</p>
+                  <h3 className="text-[20px] font-serif font-bold text-[#353535] mb-2">{item.title}</h3>
+                  <p className="text-[16px] text-slate-600 leading-[1.6] max-w-lg">{item.desc}</p>
                 </div>
               </div>
             ))}

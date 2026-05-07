@@ -51,10 +51,10 @@ const Curriculum = () => {
     <section ref={sectionRef} className="py-16 bg-[#F8F9FA] scroll-mt-24 overflow-hidden" id="curriculum">
       <div className="max-w-screen-2xl mx-auto px-6 md:px-12">
         <div className={`text-center mb-12 transition-all duration-1000 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#202020] mb-2 leading-tight">
+          <h2 className="text-[28px] md:text-[32px] font-serif font-bold text-[#202020] mb-2 leading-tight">
             Specialized <span className="italic font-normal text-gradient pr-2">Curriculum</span>
           </h2>
-          <p className="text-[#606060] max-w-2xl text-lg md:text-xl mx-auto">
+          <p className="text-slate-600 max-w-2xl text-[18px] mx-auto leading-[1.6]">
             Deep academic mastery through a curriculum designed for the modern learner.
           </p>
         </div>
@@ -87,13 +87,13 @@ const Curriculum = () => {
                   >
                     <span className="material-symbols-outlined text-2xl md:text-3xl font-bold">{panel.icon}</span>
                   </div>
-                  <h3 className={`text-xl md:text-3xl font-serif font-bold whitespace-nowrap transition-all duration-500 ${activePanel === idx ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
+                  <h3 className={`text-[20px] font-serif font-bold whitespace-nowrap transition-all duration-500 ${activePanel === idx ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
                     {panel.title}
                   </h3>
                 </div>
 
                 <div className={`overflow-hidden transition-all duration-700 ${activePanel === idx ? 'max-h-60 opacity-100 mt-2' : 'max-h-0 opacity-0'}`}>
-                  <p className="text-base md:text-xl text-white/90 leading-relaxed max-w-xl font-medium">
+                  <p className="text-[16px] text-white/90 leading-[1.6] max-w-xl font-medium">
                     {panel.desc}
                   </p>
                   <button className="mt-6 flex items-center gap-2 font-bold text-[#5D2FCC] bg-white px-6 py-3 rounded-xl hover:gap-4 transition-all w-fit shadow-lg">

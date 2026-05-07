@@ -18,9 +18,12 @@ const Features = () => {
   return (
     <section ref={sectionRef} className="py-20 px-6 md:px-12 bg-[#F0F7FF]">
       <div className={`max-w-screen-2xl mx-auto text-center mb-16 transition-all duration-1000 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
-        <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#202020] mb-4 leading-tight">
+        <h2 className="text-[28px] md:text-[32px] font-serif font-bold text-[#202020] mb-4 leading-tight">
           Master Every <span className="italic font-normal text-gradient pr-2">Subject</span>
         </h2>
+        <p className="text-slate-600 text-[18px] leading-[1.6] max-w-2xl mx-auto">
+          From foundation sciences to advanced technical skills, our experts cover it all.
+        </p>
       </div>
       <div className="max-w-screen-2xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {[
@@ -46,8 +49,8 @@ const Features = () => {
               </span>
             </div>
             <div className="flex-1">
-              <h4 className="font-bold text-[#202020] mb-2 text-xl tracking-tight">{item.title}</h4>
-              <p className="text-sm text-[#606060] leading-relaxed">{item.desc}</p>
+              <h4 className="font-bold text-[#202020] mb-2 text-[20px] tracking-tight">{item.title}</h4>
+              <p className="text-[16px] text-slate-600 leading-[1.6]">{item.desc}</p>
             </div>
           </div>
         ))}

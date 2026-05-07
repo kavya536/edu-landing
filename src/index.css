@@ -2,28 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: 'Newsreader';
-  src: url('/fonts/newsreader.woff2') format('woff2');
-  font-weight: 200 800;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Public Sans';
-  src: url('/fonts/public-sans.woff2') format('woff2');
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Material Symbols Outlined';
-  src: url('/fonts/material-symbols.woff2') format('woff2');
-  font-weight: 100 700;
-  font-style: normal;
-  font-display: swap;
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
 }
 
 @layer utilities {
@@ -77,14 +60,18 @@
 
 @layer base {
   body {
-    font-family: 'Public Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
     background-color: #f8f9fa;
     color: #808080;
   }
 }
 
 .font-serif {
-  font-family: 'Newsreader', serif;
+  font-family: 'Poppins', sans-serif;
+}
+
+.font-body {
+  font-family: 'Poppins', sans-serif;
 }
 
 .material-symbols-outlined {
@@ -112,7 +99,7 @@
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, #004AAD 0%, #00A896 100%);
+  background: linear-gradient(to right, #004AAD 0%, #00A8E8 25%, #00C9A7 75%, #38B000 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;

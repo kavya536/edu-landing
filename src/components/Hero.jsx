@@ -16,27 +16,14 @@ const Hero = () => {
         
         {/* Left Side: Content Section */}
         <div className="animate-fade-in-up pr-0 lg:pr-10">
-          {/* Trust Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-sm border border-slate-100 mb-8">
-            <div className="flex -space-x-2">
-              {[1, 2, 3].map((i) => (
-                <div key={i} className="w-6 h-6 rounded-full border-2 border-white bg-slate-200 overflow-hidden">
-                  <img src={`https://i.pravatar.cc/100?img=${i+10}`} alt="user" />
-                </div>
-              ))}
-            </div>
-            <div className="flex items-center gap-1.5 ml-2">
-              <Star className="w-4 h-4 text-amber-500 fill-amber-500" />
-              <span className="text-xs font-bold text-slate-700">Trusted by 10,000+ Students</span>
-            </div>
-          </div>
 
-          <h1 className="text-6xl md:text-7xl font-bold text-[#000000] tracking-tight leading-[1.1] mb-6">
-            Bridging the Gap
-            <span className="block mt-2 italic font-medium text-gradient pr-2">Between You & Success</span>
+
+          <h1 className="text-[32px] md:text-[52px] font-bold text-[#000000] tracking-tight leading-[1.1] mb-6">
+            Bridging the Gap <br />
+            <span className="italic font-medium text-gradient pr-2">Between You & Success</span>
           </h1>
 
-          <p className="text-lg md:text-xl text-slate-500 max-w-xl font-medium leading-relaxed mb-10">
+          <p className="text-[18px] text-slate-600 max-w-xl font-medium leading-[1.6] mb-10">
             Unlock your potential with one-click expert tutor bookings. 
             Professional mentorship tailored for every class, subject, and national competitive exam.
           </p>
@@ -61,24 +48,24 @@ const Hero = () => {
         {/* Right Side: 3-Image Grid Layout */}
         <div className="relative w-full h-[400px] md:h-[500px] flex gap-3 md:gap-5 animate-fade-in-up [animation-delay:200ms] mt-6 lg:mt-0">
           
-          {/* Top Right Floating Badge (Overlapping columns) */}
-          <div className="absolute -top-6 right-10 md:right-20 z-30 bg-white px-4 md:px-5 py-2.5 md:py-3 rounded-2xl shadow-xl flex items-center gap-3 animate-float border border-slate-50">
-            <div className="bg-emerald-50 p-1.5 rounded-lg shrink-0">
-              <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-emerald-500" />
-            </div>
-            <div>
-              <p className="text-[9px] md:text-[10px] font-bold text-slate-400 uppercase tracking-widest leading-tight">Verified Secure</p>
-              <p className="text-xs md:text-sm font-black text-slate-800 leading-tight">Top 1% Educators</p>
-            </div>
-          </div>
+
+
 
           {/* Left Large Image */}
-          <div className="relative w-7/12 h-full flex flex-col justify-end rounded-3xl md:rounded-[2.5rem] overflow-hidden shadow-2xl group animate-float">
-            <img 
-              src="/tutor img.jpeg" 
-              alt="Tutor" 
-              className="absolute inset-0 w-full h-full object-cover object-center"
-            />
+          <div className="relative w-7/12 h-full flex flex-col justify-end rounded-3xl md:rounded-[2.5rem] shadow-2xl group animate-float">
+            {/* Attached Trust Badge - Floats with image */}
+            <div className="absolute -top-3 -right-3 z-30 bg-white px-4 py-2.5 rounded-2xl shadow-xl flex items-center gap-2 border border-slate-50">
+              <CheckCircle className="w-4 h-4 text-emerald-500" />
+              <span className="text-xs font-black text-slate-800 uppercase tracking-wider">Verified • Top 1% Experts</span>
+            </div>
+            
+            <div className="absolute inset-0 rounded-3xl md:rounded-[2.5rem] overflow-hidden">
+              <img 
+                src="/tutor img.jpeg" 
+                alt="Tutor" 
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
             {/* Overlay card for tutor name */}
             <div className="relative z-10 m-4 md:m-6 bg-white p-3 md:p-4 rounded-xl md:rounded-2xl shadow-lg w-max mb-2 md:mb-4 border border-slate-50 shadow-xl">
                <p className="text-[9px] md:text-[10px] font-bold text-[#38B000] uppercase tracking-widest mb-0.5 md:mb-1">Expert Tutor</p>

@@ -9,7 +9,7 @@ const Footer = ({ setView }) => (
           <div className="mb-1">
             <img src="/logo.png" alt="Eduqra" className="h-16 w-auto object-contain" loading="lazy" />
           </div>
-          <p className="font-body leading-relaxed text-[13px] tracking-wide text-slate-700 font-medium mb-6">
+          <p className="font-body leading-[1.6] text-[14px] tracking-wide text-slate-700 font-medium mb-6">
             Empowering students with elite-level tutoring. Bridging the gap between classroom learning. Achieving excellence in national exams.
           </p>
           <div className="flex gap-4">
@@ -26,10 +26,10 @@ const Footer = ({ setView }) => (
         <div className="lg:pl-12">
           <h4 className="text-slate-900 font-black mb-6 text-xs tracking-widest uppercase whitespace-nowrap">Our Services</h4>
           <ul className="space-y-2">
-            <li><a className="font-body text-xs tracking-wide text-slate-600 font-semibold hover:text-primary transition-all whitespace-nowrap" href="#expert-tutors">Our Tutors</a></li>
-            <li><a className="font-body text-xs tracking-wide text-slate-600 font-semibold hover:text-primary transition-all whitespace-nowrap" href="#how-it-works">How it Works</a></li>
-            <li><a className="font-body text-xs tracking-wide text-slate-600 font-semibold hover:text-primary transition-all whitespace-nowrap" href="#curriculum">Curriculum</a></li>
-            <li><a className="font-body text-xs tracking-wide text-slate-600 font-semibold hover:text-primary transition-all whitespace-nowrap" href="#testimonials">Success Stories</a></li>
+            <li><a className="font-body text-[14px] tracking-wide text-slate-600 font-semibold hover:text-primary transition-all whitespace-nowrap" href="#expert-tutors">Our Tutors</a></li>
+            <li><a className="font-body text-[14px] tracking-wide text-slate-600 font-semibold hover:text-primary transition-all whitespace-nowrap" href="#how-it-works">How it Works</a></li>
+            <li><a className="font-body text-[14px] tracking-wide text-slate-600 font-semibold hover:text-primary transition-all whitespace-nowrap" href="#curriculum">Curriculum</a></li>
+            <li><a className="font-body text-[14px] tracking-wide text-slate-600 font-semibold hover:text-primary transition-all whitespace-nowrap" href="#testimonials">Success Stories</a></li>
           </ul>
         </div>
 
@@ -37,10 +37,10 @@ const Footer = ({ setView }) => (
         <div>
           <h4 className="text-slate-900 font-black mb-6 text-xs tracking-widest uppercase whitespace-nowrap">Quick Links</h4>
           <ul className="space-y-2">
-            <li><button onClick={() => setView('privacy')} className="font-body text-xs tracking-wide text-slate-600 font-semibold hover:text-primary transition-all whitespace-nowrap">Privacy Policy</button></li>
-            <li><button onClick={() => setView('terms')} className="font-body text-xs tracking-wide text-slate-600 font-semibold hover:text-primary transition-all whitespace-nowrap">Terms of Service</button></li>
-            <li><button onClick={() => setView('refund')} className="font-body text-xs tracking-wide text-slate-600 font-semibold hover:text-primary transition-all whitespace-nowrap">Refund Policy</button></li>
-            <li><a className="font-body text-xs tracking-wide text-slate-600 font-semibold hover:text-primary transition-all whitespace-nowrap" href="#contact">Contact Us</a></li>
+            <li><button onClick={() => setView('privacy')} className="font-body text-[14px] tracking-wide text-slate-600 font-semibold hover:text-primary transition-all whitespace-nowrap">Privacy Policy</button></li>
+            <li><button onClick={() => setView('terms')} className="font-body text-[14px] tracking-wide text-slate-600 font-semibold hover:text-primary transition-all whitespace-nowrap">Terms of Service</button></li>
+            <li><button onClick={() => setView('refund')} className="font-body text-[14px] tracking-wide text-slate-600 font-semibold hover:text-primary transition-all whitespace-nowrap">Refund Policy</button></li>
+            <li><a className="font-body text-[14px] tracking-wide text-slate-600 font-semibold hover:text-primary transition-all whitespace-nowrap" href="#contact">Contact Us</a></li>
           </ul>
         </div>
 

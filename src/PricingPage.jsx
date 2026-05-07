@@ -11,9 +11,9 @@ const PricingPage = ({ onBack }) => {
   }, []);
 
   const categories = [
-    { id: 'schools', label: 'Schools (K-10)' },
-    { id: 'intermediate', label: 'Intermediate (11-12)' },
-    { id: 'graduates', label: 'Graduates & Colleges' }
+    { id: 'schools', label: 'Schools (K-10)', activeStyle: 'bg-[#0B1221] text-white border-[#0B1221]' },
+    { id: 'intermediate', label: 'Intermediate (11-12)', activeStyle: 'bg-[#4F46E5] text-white border-[#4F46E5]' },
+    { id: 'graduates', label: 'Graduates & Colleges', activeStyle: 'bg-[#334155] text-white border-[#334155]' }
   ];
 
   const plans = {
@@ -237,7 +237,6 @@ const PricingPage = ({ onBack }) => {
         currency: orderData.currency,
         name: "Eduqra Plan Purchase",
         description: `${plan.name} Plan Membership`,
-        image: "/logo.png",
         order_id: orderData.orderId,
         handler: function (response) {
           // On Success: Redirect to Student Hub with payment info
@@ -277,25 +276,27 @@ const PricingPage = ({ onBack }) => {
         <div className="w-24"></div> {/* Spacer */}
       </nav>
 
-      <main className="max-w-screen-xl mx-auto px-6 py-24 md:py-32">
+      <main className="max-w-screen-xl mx-auto px-6 pt-12 pb-24 md:pt-16 md:pb-32">
         {/* Header Section */}
-        <div className="text-center mb-16">
-          <h1 className="text-6xl md:text-7xl font-serif font-bold text-slate-900 mb-4 transition-all">Explore plans</h1>
-          <p className="text-lg md:text-xl text-slate-500 max-w-2xl mx-auto mb-10 leading-relaxed">
+        <div className="text-center mb-10">
+          <h1 className="text-[32px] md:text-[52px] font-serif font-bold text-slate-900 mb-4 transition-all">
+            Explore <span className="italic font-normal text-gradient pr-2">Plans</span>
+          </h1>
+          <p className="text-[18px] text-slate-600 max-w-2xl mx-auto mb-10 leading-[1.6]">
             Choose the perfect learning journey tailored to your academic needs and goals.
           </p>
 
           {/* Category Toggle */}
-          <div className="flex justify-center mb-16">
+          <div className="flex justify-center mb-10">
             <div className="inline-flex items-center p-1.5 bg-[#F8F9FA] rounded-[1.25rem] shadow-sm border border-slate-200">
               {categories.map((cat) => (
                 <button
                   key={cat.id}
                   onClick={() => setActiveCategory(cat.id)}
-                  className={`px-6 md:px-8 py-3 rounded-[1rem] text-[10px] sm:text-[11px] tracking-[0.05em] uppercase transition-all duration-300 ${
+                  className={`px-6 md:px-8 py-3 rounded-[1rem] text-[10px] sm:text-[11px] tracking-[0.05em] uppercase transition-all duration-300 border-[2.5px] ${
                     activeCategory === cat.id 
-                      ? 'border-[2.5px] border-[#0B1221] bg-white text-[#0B1221] font-black shadow-sm' 
-                      : 'border-[2.5px] border-transparent text-slate-400 font-bold hover:text-slate-600'
+                      ? `${cat.activeStyle} font-black shadow-lg shadow-current/10 scale-105` 
+                      : 'border-transparent text-slate-400 font-bold hover:text-slate-600'
                   }`}
                 >
                   {cat.label}
@@ -320,7 +321,7 @@ const PricingPage = ({ onBack }) => {
                 </div>
               )}
 
-              <div className="mb-8 border-b border-slate-100 pb-8">
+              <div className="mb-6 border-b border-slate-100 pb-6">
                 <div className={`w-14 h-14 rounded-[1.25rem] flex items-center justify-center mb-6 shadow-sm ${
                   plan.color === 'indigo' ? 'bg-[#7C5CFF] text-white' : 
                   plan.color === 'blue' ? 'bg-[#4F7DF3] text-white' : 'bg-[#0B1221] text-white'
@@ -328,12 +329,12 @@ const PricingPage = ({ onBack }) => {
                   {plan.name === 'Premium' ? <Crown className="w-7 h-7" /> : 
                    plan.name === 'Standard' ? <Star className="w-7 h-7" /> : <Shield className="w-7 h-7" />}
                 </div>
-                <h3 className="text-2xl font-black text-[#0B1221] uppercase tracking-wide mb-1">{plan.name}</h3>
-                <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-6">{plan.type}</p>
+                <h3 className="text-[20px] font-black text-[#0B1221] uppercase tracking-wide mb-1">{plan.name}</h3>
+                <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-4">{plan.type}</p>
                 <div className="flex flex-col">
-                  <div className="flex items-baseline gap-1">
-                    <span className="text-2xl md:text-3xl font-extrabold text-[#0B1221] tracking-tight">₹</span>
-                    <span className="text-5xl md:text-7xl font-extrabold text-[#0B1221] tracking-tight leading-none">
+                  <div className="flex items-baseline gap-0">
+                    <span className="text-[24px] font-extrabold text-[#0B1221] tracking-tighter">₹</span>
+                    <span className="text-[48px] font-extrabold text-[#0B1221] tracking-tighter leading-none">
                       {plan.price}
                     </span>
                   </div>
@@ -341,7 +342,7 @@ const PricingPage = ({ onBack }) => {
                     {plan.period}
                   </span>
                 </div>
-                <p className="mt-5 text-slate-500 text-[13px] leading-relaxed font-medium">{plan.description}</p>
+                <p className="mt-3 text-slate-500 text-[13px] leading-relaxed font-medium">{plan.description}</p>
               </div>
 
               <div className="flex-1 space-y-4 mb-10">
@@ -376,7 +377,7 @@ const PricingPage = ({ onBack }) => {
         {/* FAQ Section */}
         <div className="pt-32 border-t border-slate-200">
            <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-slate-900 mb-4">Frequently asked questions</h2>
+            <h2 className="text-[28px] md:text-[32px] font-serif font-bold text-slate-900 mb-4">Frequently asked questions</h2>
           </div>
           <div className="max-w-3xl mx-auto space-y-6">
             {[
@@ -394,7 +395,7 @@ const PricingPage = ({ onBack }) => {
                   <div className={`text-slate-400 font-light text-3xl transition-transform duration-300 ${openFaqIndex === i ? 'rotate-45 text-primary' : ''}`}>+</div>
                 </div>
                 {openFaqIndex === i && (
-                  <div className="mt-4 text-slate-500 text-sm leading-relaxed animate-fade-in">
+                  <div className="mt-4 text-slate-600 text-sm leading-relaxed animate-fade-in">
                     {faq.a}
                   </div>
                 )}

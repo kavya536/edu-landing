@@ -41,7 +41,7 @@ const LegalView = ({ title, navItems, children, onBack }) => (
       <div className="flex-1 bg-white rounded-3xl shadow-sm border border-slate-100 overflow-hidden">
         {/* Title Header - Reduced Bottom Padding */}
         <div className="p-8 md:p-10 md:pb-6 bg-slate-50/50 border-b border-slate-100">
-          <h1 className="text-3xl md:text-5xl font-serif font-bold text-slate-900 mb-2 tracking-tight scroll-mt-32" id="overview">
+          <h1 className="text-[32px] md:text-[52px] font-serif font-bold text-slate-900 mb-2 tracking-tight scroll-mt-32" id="overview">
             {title}
           </h1>
           <p className="text-slate-400 font-medium m-0">Effective Date: May 01, 2026</p>
@@ -52,8 +52,8 @@ const LegalView = ({ title, navItems, children, onBack }) => (
           
           {/* Dedicated Support Section */}
           <div className="mt-12 pt-10 border-t border-slate-100 scroll-mt-32" id="support">
-             <h2 className="text-2xl font-serif font-bold text-[#5D2FCC] mb-4">Legal Support</h2>
-             <p className="text-slate-600 text-lg leading-relaxed mb-6">
+             <h2 className="text-[20px] font-serif font-bold text-[#5D2FCC] mb-4">Legal Support</h2>
+             <p className="text-slate-600 text-[16px] leading-[1.6] mb-6">
                If you have any questions regarding these {title} clauses, please contact our team.
              </p>
              <div className="flex flex-col sm:flex-row gap-4">
@@ -159,7 +159,7 @@ export const RefundPolicy = ({ onBack }) => (
     ]}
   >
     <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 mb-8">
-      <p className="italic text-lg text-slate-700 m-0 leading-relaxed">
+      <p className="italic text-[16px] text-slate-700 m-0 leading-[1.6]">
         "Our policy ensures that your learning journey continues smoothly even if plans change. We prioritize rescheduling and credit-based transitions to new tutors."
       </p>
     </div>

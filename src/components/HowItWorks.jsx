@@ -19,10 +19,10 @@ const HowItWorks = () => {
     <section ref={sectionRef} className="py-24 px-6 md:px-12 bg-[#0B2545] scroll-mt-24" id="how-it-works">
       <div className="max-w-screen-2xl mx-auto">
         <div className={`text-center mb-20 transition-all duration-1000 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mb-4 leading-tight">
+          <h2 className="text-[28px] md:text-[32px] font-serif font-bold text-white mb-4 leading-tight">
             How It <span className="italic font-normal text-gradient pr-2">Works</span>
           </h2>
-          <p className="text-slate-400 max-w-2xl text-lg md:text-xl mx-auto">A refined, four-step journey toward academic excellence.</p>
+          <p className="text-slate-600 text-[18px] max-w-2xl mx-auto leading-[1.6]">A seamless journey from booking to mastery.</p>
         </div>
         
         <div className="relative">
@@ -38,11 +38,11 @@ const HowItWorks = () => {
             ].map((item, idx) => (
               <div 
                 key={idx} 
-                className={`group relative bg-[#0B2545] p-8 md:p-10 rounded-[2rem] border border-white/10 transition-all duration-500 hover:-translate-y-2 hover:border-[#7C3AED]/50 hover:shadow-2xl hover:shadow-[#7C3AED]/10 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
+                className={`group relative bg-[#0B2545] p-8 md:p-10 rounded-[2rem] border border-white/10 transition-all duration-500 hover:-translate-y-2 hover:border-[#7C3AED]/50 hover:shadow-2xl hover:shadow-[#7C3AED]/10 flex flex-col transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
                 style={{ transitionDelay: `${idx * 150}ms` }}
               >
-                {/* Large Background Number */}
-                <div className="absolute top-6 right-8 text-[120px] font-black text-slate-800/20 pointer-events-none transition-colors duration-500 group-hover:text-slate-800/40 leading-none">
+                {/* Large Background Number - Repositioned to bottom-right to avoid icon overlap */}
+                <div className="absolute bottom-4 right-6 text-[100px] font-black text-slate-800/10 pointer-events-none transition-colors duration-500 group-hover:text-slate-800/20 leading-none select-none z-0">
                   0{idx + 1}
                 </div>
 
@@ -55,12 +55,12 @@ const HowItWorks = () => {
                 
                 {/* Text Content */}
                 <div className="relative z-10">
-                  <h3 className="text-xl md:text-2xl font-bold italic text-white mb-4 transition-colors duration-500">{item.title}</h3>
-                  <p className="text-slate-400 leading-relaxed text-sm md:text-[15px] font-medium">{item.desc}</p>
+                  <h3 className="text-[20px] font-bold italic text-white mb-4 transition-colors duration-500">{item.title}</h3>
+                  <p className="text-slate-600 text-[16px] leading-[1.6]">{item.desc}</p>
                 </div>
 
                 {/* Phase Indicator */}
-                <div className="flex items-center gap-4 mt-12">
+                <div className="flex items-center gap-4 mt-auto pt-10">
                   <div className="w-12 h-px bg-slate-700 transition-colors duration-500 group-hover:bg-[#7C3AED]"></div>
                   <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest transition-colors duration-500 group-hover:text-[#7C3AED]">
                     Phase 0{idx + 1}

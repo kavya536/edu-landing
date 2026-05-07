@@ -29,10 +29,10 @@ const FAQ = () => {
     <section ref={sectionRef} className="pt-16 pb-20 px-6 md:px-12 bg-[#F8F9FA] scroll-mt-20" id="faq">
       <div className="max-w-4xl mx-auto">
         <div className={`text-center mb-16 transition-all duration-1000 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#202020] mb-2 leading-tight">
+          <h2 className="text-[28px] md:text-[32px] font-serif font-bold text-[#202020] mb-2 leading-tight">
             Common <span className="italic font-normal text-gradient pr-2">Questions</span>
           </h2>
-          <p className="text-[#808080] text-lg md:text-xl">Everything you need to know about starting with Eduqra.</p>
+          <p className="text-slate-600 text-[18px] leading-[1.6]">Everything you need to know about starting with Eduqra.</p>
         </div>
         <div className="space-y-4">
           {faqs.map((faq, i) => (
@@ -41,11 +41,11 @@ const FAQ = () => {
                 className="flex justify-between items-center cursor-pointer mb-2"
                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
               >
-                <h3 className="text-lg font-serif font-bold text-[#353535] hover:text-amber-600 transition-colors">{faq.q}</h3>
+                <h3 className="text-[20px] font-serif font-bold text-[#353535] hover:text-amber-600 transition-colors">{faq.q}</h3>
                 <span className={`material-symbols-outlined text-[#808080] transition-transform ${openIndex === i ? 'rotate-180' : ''}`}>expand_more</span>
               </div>
               {openIndex === i && (
-                <p className="text-[#353535] text-sm leading-relaxed animate-fade-in">{faq.a}</p>
+                <p className="text-[#353535] text-[16px] leading-[1.6] animate-fade-in">{faq.a}</p>
               )}
             </div>
           ))}

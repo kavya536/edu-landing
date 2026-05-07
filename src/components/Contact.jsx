@@ -7,8 +7,10 @@ const Contact = ({ onViewPricing }) => (
       <div className="max-w-4xl mx-auto text-center editorial-gradient p-12 rounded-3xl relative overflow-hidden shadow-2xl shadow-edu-blue/40">
         <div className="absolute top-0 left-0 w-full h-full bg-white/5 opacity-10"></div>
         <div className="relative z-10">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mb-6 tracking-tight">Start Your Journey Today</h2>
-          <p className="text-white/90 text-lg md:text-xl mb-12 max-w-xl mx-auto leading-relaxed">
+          <h2 className="text-[28px] md:text-[32px] font-serif font-bold text-white mb-6 tracking-tight">
+            Start Your <span className="italic font-normal text-gradient pr-2">Journey Today</span>
+          </h2>
+          <p className="text-white/90 text-[16px] md:text-[20px] mb-12 max-w-xl mx-auto leading-[1.6]">
             Join an elite circle of scholars and redefine what you thought was possible in your academic pursuit.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-6">
@@ -34,11 +36,11 @@ const Contact = ({ onViewPricing }) => (
       <div className="max-w-screen-xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           <div>
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#202020] mb-6 tracking-tight leading-tight text-center lg:text-left">
-              <span className="block">Have Questions?</span>
-              <span className="block italic font-normal text-gradient pr-2">Let's Connect</span>
+            <h2 className="text-[28px] md:text-[32px] font-serif font-bold text-[#202020] mb-6 tracking-tight leading-tight text-center lg:text-left">
+              Have Questions? <br />
+              <span className="italic font-normal text-gradient pr-2">Let's Connect</span>
             </h2>
-            <p className="text-[#606060] text-lg md:text-xl mb-12 max-w-md mx-auto lg:mx-0 text-center lg:text-left leading-relaxed">
+            <p className="text-slate-600 text-[18px] mb-12 max-w-md mx-auto lg:mx-0 text-center lg:text-left leading-[1.6]">
               Our academic advisors are here to help you find the perfect tutor and build a roadmap for your success.
             </p>
             <div className="space-y-8">
@@ -47,8 +49,8 @@ const Contact = ({ onViewPricing }) => (
                   <span className="material-symbols-outlined text-edu-blue text-2xl">mail</span>
                 </div>
                 <div>
-                  <h4 className="font-bold text-[#202020] text-lg">Email Us</h4>
-                  <p className="text-[#606060] text-base font-medium">contact@eduqra.com</p>
+                  <h4 className="font-bold text-[#202020] text-[20px]">Email Us</h4>
+                  <p className="text-slate-600 text-base font-medium">contact@eduqra.com</p>
                 </div>
               </div>
 
@@ -57,8 +59,8 @@ const Contact = ({ onViewPricing }) => (
                   <span className="material-symbols-outlined text-edu-green text-2xl">location_on</span>
                 </div>
                 <div>
-                  <h4 className="font-bold text-[#202020] text-lg">Visit Us</h4>
-                  <p className="text-[#606060] text-base font-medium leading-snug">
+                  <h4 className="font-bold text-[#202020] text-[20px]">Visit Us</h4>
+                  <p className="text-slate-600 text-base font-medium leading-snug">
                     Allwyn Colony, Road No 45, KPHB, Hyderabad
                   </p>
                 </div>
@@ -69,8 +71,8 @@ const Contact = ({ onViewPricing }) => (
                   <span className="material-symbols-outlined text-edu-teal text-2xl">call</span>
                 </div>
                 <div>
-                  <h4 className="font-bold text-[#202020] text-lg">Call Us</h4>
-                  <p className="text-[#606060] text-base font-medium">+91 7337312325</p>
+                  <h4 className="font-bold text-[#202020] text-[20px]">Call Us</h4>
+                  <p className="text-slate-600 text-base font-medium">+91 7337312325</p>
                 </div>
               </div>
             </div>
@@ -79,33 +81,33 @@ const Contact = ({ onViewPricing }) => (
             <form className="space-y-6" onSubmit={(e) => { e.preventDefault(); alert('Message sent successfully!'); e.target.reset(); }}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label className="text-sm font-bold text-slate-700 ml-1">Full Name</label>
+                  <label className="text-[14px] font-bold text-slate-700 ml-1">Full Name</label>
                   <input 
                     required 
                     type="text" 
                     placeholder="Enter your name"
-                    className="w-full px-5 py-4 rounded-xl border border-slate-200 bg-white focus:border-[#4F46E5] focus:ring-4 focus:ring-[#4F46E5]/5 outline-none transition-all text-slate-900 placeholder:text-slate-400"
+                    className="w-full px-5 py-4 rounded-xl border border-slate-200 bg-white focus:border-[#4F46E5] focus:ring-4 focus:ring-[#4F46E5]/5 outline-none transition-all text-[16px] text-slate-900 placeholder:text-slate-400"
                   />
                 </div>
                 
                 <div className="space-y-2">
-                  <label className="text-sm font-bold text-slate-700 ml-1">Email Address</label>
+                  <label className="text-[14px] font-bold text-slate-700 ml-1">Email Address</label>
                   <input 
                     required 
                     type="email" 
                     placeholder="name@company.com"
-                    className="w-full px-5 py-4 rounded-xl border border-slate-200 bg-white focus:border-[#4F46E5] focus:ring-4 focus:ring-[#4F46E5]/5 outline-none transition-all text-slate-900 placeholder:text-slate-400"
+                    className="w-full px-5 py-4 rounded-xl border border-slate-200 bg-white focus:border-[#4F46E5] focus:ring-4 focus:ring-[#4F46E5]/5 outline-none transition-all text-[16px] text-slate-900 placeholder:text-slate-400"
                   />
                 </div>
               </div>
 
               <div className="space-y-2">
-                <label className="text-sm font-bold text-slate-700 ml-1">How can we help you?</label>
+                <label className="text-[14px] font-bold text-slate-700 ml-1">How can we help you?</label>
                 <textarea 
                   required 
                   rows="5" 
                   placeholder="Describe your requirements or questions here..."
-                  className="w-full px-5 py-4 rounded-xl border border-slate-200 bg-white focus:border-[#4F46E5] focus:ring-4 focus:ring-[#4F46E5]/5 outline-none transition-all text-slate-900 placeholder:text-slate-400 resize-none"
+                  className="w-full px-5 py-4 rounded-xl border border-slate-200 bg-white focus:border-[#4F46E5] focus:ring-4 focus:ring-[#4F46E5]/5 outline-none transition-all text-[16px] text-slate-900 placeholder:text-slate-400 resize-none"
                 ></textarea>
               </div>
 
