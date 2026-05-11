@@ -1,136 +1,225 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { db } from '../firebase';
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 
-const Contact = ({ onViewPricing }) => (
-  <>
-    {/* Section: Final CTA */}
-    <section className="py-24 px-6 md:px-12 bg-primary">
-      <div className="max-w-4xl mx-auto text-center editorial-gradient p-12 rounded-3xl relative overflow-hidden shadow-2xl shadow-edu-blue/40">
-        <div className="absolute top-0 left-0 w-full h-full bg-white/5 opacity-10"></div>
-        <div className="relative z-10">
-          <h2 className="text-[28px] md:text-[32px] font-serif font-bold text-white mb-6 tracking-tight">
-            Start Your <span className="italic font-normal text-gradient pr-2">Journey Today</span>
-          </h2>
-          <p className="text-white/90 text-[16px] md:text-[20px] mb-12 max-w-xl mx-auto leading-[1.6]">
-            Join an elite circle of scholars and redefine what you thought was possible in your academic pursuit.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-6">
-            <a href={`${import.meta.env.VITE_STUDENT_HUB_URL}/?view=login`} className="bg-white text-edu-blue px-12 py-5 rounded-xl font-bold text-lg hover:scale-105 transition-transform duration-300 flex items-center justify-center shadow-lg">
-              Book a Tutor
-            </a>
-            <button 
-              onClick={onViewPricing}
-              className="bg-white/10 backdrop-blur-md text-white border border-white/20 px-12 py-5 rounded-xl font-bold text-lg hover:bg-white/20 transition-all"
-            >
-              View Pricing
-            </button>
-          </div>
-          <p className="mt-12 text-white/60 text-sm flex items-center justify-center gap-2">
-            <span className="material-symbols-outlined text-sm text-edu-green">verified_user</span>
-            100% Satisfaction Guarantee or Your First Session is Free.
-          </p>
-        </div>
-      </div>
-    </section>
+const Contact = ({ onViewPricing }) => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
-    <section id="contact" className="py-24 px-6 md:px-12 bg-[#F1F5F9] scroll-mt-20">
-      <div className="max-w-screen-xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-          <div>
-            <h2 className="text-[28px] md:text-[32px] font-serif font-bold text-[#202020] mb-6 tracking-tight leading-tight text-center lg:text-left">
-              Have Questions? <br />
-              <span className="italic font-normal text-gradient pr-2">Let's Connect</span>
+  const isFormValid = formData.name.trim() !== '' && 
+                      formData.email.trim() !== '' && 
+                      formData.phone.trim() !== '' && 
+                      formData.message.trim() !== '';
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!isFormValid) return;
+
+    setIsSubmitting(true);
+    try {
+      // 1. Store in landing_queries
+      await addDoc(collection(db, 'landing_queries'), {
+        ...formData,
+        source: 'edu-landing-page',
+        status: 'new',
+        createdAt: serverTimestamp()
+      });
+
+      // 2. Notify Admin
+      await addDoc(collection(db, 'admin_notifications'), {
+        type: 'landing_query',
+        category: 'support',
+        title: 'New Landing Page Feedback',
+        message: `New query from ${formData.name}. Message: ${formData.message.substring(0, 50)}...`,
+        details: {
+          ...formData,
+          submittedAt: new Date().toISOString()
+        },
+        read: false,
+        time: new Date().toISOString() // Using ISO string for immediate visibility
+      });
+
+      setIsSubmitted(true);
+      setFormData({ name: '', email: '', phone: '', message: '' });
+      setTimeout(() => setIsSubmitted(false), 5000);
+    } catch (err) {
+      console.error("Error submitting feedback:", err);
+      alert("Failed to send message. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  return (
+    <>
+      {/* Section: Final CTA */}
+      <section className="py-24 px-6 md:px-12 bg-primary">
+        <div className="max-w-4xl mx-auto text-center editorial-gradient p-12 rounded-3xl relative overflow-hidden shadow-2xl shadow-edu-blue/40">
+          <div className="absolute top-0 left-0 w-full h-full bg-white/5 opacity-10"></div>
+          <div className="relative z-10">
+            <h2 className="text-[28px] md:text-[32px] font-serif font-bold text-white mb-6 tracking-tight">
+              Start Your <span className="italic font-normal text-gradient pr-2">Journey Today</span>
             </h2>
-            <p className="text-slate-600 text-[18px] mb-12 max-w-md mx-auto lg:mx-0 text-center lg:text-left leading-[1.6]">
-              Our academic advisors are here to help you find the perfect tutor and build a roadmap for your success.
+            <p className="text-white/90 text-[16px] md:text-[20px] mb-12 max-w-xl mx-auto leading-[1.6]">
+              Join an elite circle of scholars and redefine what you thought was possible in your academic pursuit.
             </p>
-            <div className="space-y-8">
-              <div className="flex items-center gap-6">
-                <div className="w-16 h-16 rounded-2xl bg-white flex items-center justify-center shrink-0 border border-slate-200 shadow-sm">
-                  <span className="material-symbols-outlined text-edu-blue text-2xl">mail</span>
-                </div>
-                <div>
-                  <h4 className="font-bold text-[#202020] text-[20px]">Email Us</h4>
-                  <p className="text-slate-600 text-base font-medium">contact@eduqra.com</p>
-                </div>
-              </div>
+            <div className="flex flex-col sm:flex-row justify-center gap-6">
+              <a href={`${import.meta.env.VITE_STUDENT_HUB_URL}/?view=login`} className="bg-white text-edu-blue px-12 py-5 rounded-xl font-bold text-lg hover:scale-105 transition-transform duration-300 flex items-center justify-center shadow-lg">
+                Book a Tutor
+              </a>
+              <button 
+                onClick={onViewPricing}
+                className="bg-white/10 backdrop-blur-md text-white border border-white/20 px-12 py-5 rounded-xl font-bold text-lg hover:bg-white/20 transition-all"
+              >
+                View Pricing
+              </button>
+            </div>
+            <p className="mt-12 text-white/60 text-sm flex items-center justify-center gap-2">
+              <span className="material-symbols-outlined text-sm text-edu-green">verified_user</span>
+              100% Satisfaction Guarantee or Your First Session is Free.
+            </p>
+          </div>
+        </div>
+      </section>
 
-              <div className="flex items-center gap-6">
-                <div className="w-16 h-16 rounded-2xl bg-white flex items-center justify-center shrink-0 border border-slate-200 shadow-sm">
-                  <span className="material-symbols-outlined text-edu-green text-2xl">location_on</span>
+      <section id="contact" className="py-24 px-6 md:px-12 bg-[#F1F5F9] scroll-mt-20">
+        <div className="max-w-screen-xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+            <div>
+              <h2 className="text-[28px] md:text-[32px] font-serif font-bold text-[#202020] mb-6 tracking-tight leading-tight text-center lg:text-left">
+                Have Questions? <br />
+                <span className="italic font-normal text-gradient pr-2">Let's Connect</span>
+              </h2>
+              <p className="text-slate-600 text-[18px] mb-12 max-w-md mx-auto lg:mx-0 text-center lg:text-left leading-[1.6]">
+                Our academic advisors are here to help you find the perfect tutor and build a roadmap for your success.
+              </p>
+              <div className="space-y-8">
+                <div className="flex items-center gap-6">
+                  <div className="w-16 h-16 rounded-2xl bg-white flex items-center justify-center shrink-0 border border-slate-200 shadow-sm">
+                    <span className="material-symbols-outlined text-edu-blue text-2xl">mail</span>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-[#202020] text-[20px]">Email Us</h4>
+                    <p className="text-slate-600 text-base font-medium">contact@eduqra.com</p>
+                  </div>
                 </div>
-                <div>
-                  <h4 className="font-bold text-[#202020] text-[20px]">Visit Us</h4>
-                  <p className="text-slate-600 text-base font-medium leading-snug">
-                    Allwyn Colony, Road No 45, KPHB, Hyderabad
-                  </p>
-                </div>
-              </div>
 
-              <div className="flex items-center gap-6">
-                <div className="w-16 h-16 rounded-2xl bg-white flex items-center justify-center shrink-0 border border-slate-200 shadow-sm">
-                  <span className="material-symbols-outlined text-edu-teal text-2xl">call</span>
+                <div className="flex items-center gap-6">
+                  <div className="w-16 h-16 rounded-2xl bg-white flex items-center justify-center shrink-0 border border-slate-200 shadow-sm">
+                    <span className="material-symbols-outlined text-edu-green text-2xl">location_on</span>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-[#202020] text-[20px]">Visit Us</h4>
+                    <p className="text-slate-600 text-base font-medium leading-snug">
+                      Allwyn Colony, Road No 45, KPHB, Hyderabad
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <h4 className="font-bold text-[#202020] text-[20px]">Call Us</h4>
-                  <p className="text-slate-600 text-base font-medium">+91 7337312325</p>
+
+                <div className="flex items-center gap-6">
+                  <div className="w-16 h-16 rounded-2xl bg-white flex items-center justify-center shrink-0 border border-slate-200 shadow-sm">
+                    <span className="material-symbols-outlined text-edu-teal text-2xl">call</span>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-[#202020] text-[20px]">Call Us</h4>
+                    <p className="text-slate-600 text-base font-medium">+91 7337312325</p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div className="bg-white p-8 md:p-12 rounded-3xl shadow-2xl border border-slate-200">
-            <form className="space-y-6" onSubmit={(e) => { e.preventDefault(); alert('Message sent successfully!'); e.target.reset(); }}>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-white p-8 md:p-12 rounded-3xl shadow-2xl border border-slate-200 relative overflow-hidden">
+              {isSubmitted && (
+                <div className="absolute inset-0 bg-white/90 backdrop-blur-sm z-20 flex flex-col items-center justify-center text-center p-8 animate-in fade-in zoom-in duration-300">
+                  <div className="w-20 h-20 bg-emerald-50 text-emerald-500 rounded-full flex items-center justify-center mb-6">
+                    <span className="material-symbols-outlined text-4xl">check_circle</span>
+                  </div>
+                  <h3 className="text-2xl font-bold text-slate-900 mb-2">Message Sent!</h3>
+                  <p className="text-slate-600 font-medium">Feedback submitted, you will get a response shortly.</p>
+                </div>
+              )}
+
+              <form className="space-y-6" onSubmit={handleSubmit}>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <label className="text-[14px] font-bold text-slate-700 ml-1">Full Name</label>
+                    <input 
+                      required 
+                      type="text" 
+                      placeholder="Enter your name"
+                      value={formData.name}
+                      onChange={(e) => setFormData({...formData, name: e.target.value})}
+                      className="w-full px-5 py-4 rounded-xl border border-slate-200 bg-white focus:border-[#4F46E5] focus:ring-4 focus:ring-[#4F46E5]/5 outline-none transition-all text-[16px] text-slate-900 placeholder:text-slate-400"
+                    />
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <label className="text-[14px] font-bold text-slate-700 ml-1">Email Address</label>
+                    <input 
+                      required 
+                      type="email" 
+                      placeholder="name@company.com"
+                      value={formData.email}
+                      onChange={(e) => setFormData({...formData, email: e.target.value})}
+                      className="w-full px-5 py-4 rounded-xl border border-slate-200 bg-white focus:border-[#4F46E5] focus:ring-4 focus:ring-[#4F46E5]/5 outline-none transition-all text-[16px] text-slate-900 placeholder:text-slate-400"
+                    />
+                  </div>
+                </div>
+
                 <div className="space-y-2">
-                  <label className="text-[14px] font-bold text-slate-700 ml-1">Full Name</label>
+                  <label className="text-[14px] font-bold text-slate-700 ml-1">Phone Number</label>
                   <input 
                     required 
-                    type="text" 
-                    placeholder="Enter your name"
+                    type="tel" 
+                    placeholder="Enter your phone number (Numbers only)"
+                    value={formData.phone}
+                    onChange={(e) => {
+                      const value = e.target.value.replace(/[^0-9]/g, '');
+                      setFormData({...formData, phone: value});
+                    }}
                     className="w-full px-5 py-4 rounded-xl border border-slate-200 bg-white focus:border-[#4F46E5] focus:ring-4 focus:ring-[#4F46E5]/5 outline-none transition-all text-[16px] text-slate-900 placeholder:text-slate-400"
                   />
                 </div>
-                
+
                 <div className="space-y-2">
-                  <label className="text-[14px] font-bold text-slate-700 ml-1">Email Address</label>
-                  <input 
+                  <label className="text-[14px] font-bold text-slate-700 ml-1">How can we help you?</label>
+                  <textarea 
                     required 
-                    type="email" 
-                    placeholder="name@company.com"
-                    className="w-full px-5 py-4 rounded-xl border border-slate-200 bg-white focus:border-[#4F46E5] focus:ring-4 focus:ring-[#4F46E5]/5 outline-none transition-all text-[16px] text-slate-900 placeholder:text-slate-400"
-                  />
+                    rows="4" 
+                    placeholder="Describe your requirements or questions here..."
+                    value={formData.message}
+                    onChange={(e) => setFormData({...formData, message: e.target.value})}
+                    className="w-full px-5 py-4 rounded-xl border border-slate-200 bg-white focus:border-[#4F46E5] focus:ring-4 focus:ring-[#4F46E5]/5 outline-none transition-all text-[16px] text-slate-900 placeholder:text-slate-400 resize-none"
+                  ></textarea>
                 </div>
-              </div>
 
-              <div className="space-y-2">
-                <label className="text-[14px] font-bold text-slate-700 ml-1">How can we help you?</label>
-                <textarea 
-                  required 
-                  rows="5" 
-                  placeholder="Describe your requirements or questions here..."
-                  className="w-full px-5 py-4 rounded-xl border border-slate-200 bg-white focus:border-[#4F46E5] focus:ring-4 focus:ring-[#4F46E5]/5 outline-none transition-all text-[16px] text-slate-900 placeholder:text-slate-400 resize-none"
-                ></textarea>
-              </div>
+                <div className="pt-2">
+                  <button 
+                    type="submit"
+                    disabled={!isFormValid || isSubmitting}
+                    className="w-full bg-[#004AAD] text-white py-4 rounded-xl font-bold text-lg hover:brightness-110 active:transform active:scale-[0.98] transition-all duration-200 shadow-lg shadow-blue-200 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:grayscale"
+                  >
+                    {isSubmitting ? 'Sending...' : 'Send Message'}
+                    {!isSubmitting && <span className="material-symbols-outlined text-xl">send</span>}
+                  </button>
+                </div>
 
-              <div className="pt-2">
-                <button 
-                  type="submit"
-                  className="w-full bg-[#004AAD] text-white py-4 rounded-xl font-bold text-lg hover:brightness-110 active:transform active:scale-[0.98] transition-all duration-200 shadow-lg shadow-blue-200 flex items-center justify-center gap-2"
-                >
-                  Send Message
-                  <span className="material-symbols-outlined text-xl">send</span>
-                </button>
-              </div>
-
-              <div className="flex items-center justify-center gap-2 pt-2">
-                <div className="w-1.5 h-1.5 rounded-full bg-emerald-500"></div>
-                <p className="text-xs font-medium text-slate-500">Typical response time: 2-4 hours</p>
-              </div>
-            </form>
+                <div className="flex items-center justify-center gap-2 pt-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-emerald-500"></div>
+                  <p className="text-xs font-medium text-slate-500">Typical response time: 2-4 hours</p>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-  </>
-);
+      </section>
+    </>
+  );
+};
 
 export default Contact;
